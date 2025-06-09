@@ -12,6 +12,20 @@
 		146B48F92DE0E2250037167C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B48F82DE0E2250037167C /* Item.swift */; };
 		146B48FB2DE0E2280037167C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146B48FA2DE0E2280037167C /* Assets.xcassets */; };
 		146B48FE2DE0E2280037167C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146B48FD2DE0E2280037167C /* Preview Assets.xcassets */; };
+		146B49072DE0E2DD0037167C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B49062DE0E2DD0037167C /* SplashView.swift */; };
+		146B490A2DE0E9510037167C /* LeagueSpartan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 146B49092DE0E9510037167C /* LeagueSpartan.ttf */; };
+		146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B490C2DE0EF140037167C /* WelcomeView.swift */; };
+		146B49102DE0F2FF0037167C /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B490F2DE0F2FF0037167C /* BlueButton.swift */; };
+		146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B49112DE0F3BA0037167C /* GrayBlueButton.swift */; };
+		149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DA2DF5B08D0098947C /* LoginView.swift */; };
+		149C36DE2DF5B2520098947C /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DD2DF5B2520098947C /* ViewExt.swift */; };
+		149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DF2DF5B64F0098947C /* TextFieldView.swift */; };
+		149C36E22DF5BBE20098947C /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E12DF5BBE20098947C /* PasswordFieldView.swift */; };
+		149C36E42DF5CDC70098947C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E32DF5CDC70098947C /* SignupView.swift */; };
+		149C36E62DF5D41E0098947C /* NumberFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E52DF5D41E0098947C /* NumberFieldView.swift */; };
+		149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E72DF5E7D40098947C /* ResetPasswordView.swift */; };
+		149C36EA2DF5F2010098947C /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E92DF5F2010098947C /* DateExt.swift */; };
+		149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36EB2DF5F4CD0098947C /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +35,21 @@
 		146B48F82DE0E2250037167C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		146B48FA2DE0E2280037167C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		146B48FD2DE0E2280037167C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		146B49062DE0E2DD0037167C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		146B49092DE0E9510037167C /* LeagueSpartan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeagueSpartan.ttf; sourceTree = "<group>"; };
+		146B490B2DE0E99D0037167C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		146B490C2DE0EF140037167C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		146B490F2DE0F2FF0037167C /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
+		146B49112DE0F3BA0037167C /* GrayBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBlueButton.swift; sourceTree = "<group>"; };
+		149C36DA2DF5B08D0098947C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		149C36DD2DF5B2520098947C /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		149C36DF2DF5B64F0098947C /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		149C36E12DF5BBE20098947C /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
+		149C36E32DF5CDC70098947C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		149C36E52DF5D41E0098947C /* NumberFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFieldView.swift; sourceTree = "<group>"; };
+		149C36E72DF5E7D40098947C /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		149C36E92DF5F2010098947C /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		149C36EB2DF5F4CD0098947C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +82,13 @@
 		146B48F32DE0E2250037167C /* SkinFirts */ = {
 			isa = PBXGroup;
 			children = (
+				149C36DC2DF5B2100098947C /* Extensions */,
+				146B490E2DE0F2D00037167C /* Components */,
+				146B490B2DE0E99D0037167C /* Info.plist */,
+				146B49082DE0E8CB0037167C /* Fonts */,
+				146B49052DE0E2650037167C /* Model */,
+				146B49042DE0E24C0037167C /* View */,
 				146B48F42DE0E2250037167C /* SkinFirtsApp.swift */,
-				146B48F62DE0E2250037167C /* ContentView.swift */,
-				146B48F82DE0E2250037167C /* Item.swift */,
 				146B48FA2DE0E2280037167C /* Assets.xcassets */,
 				146B48FC2DE0E2280037167C /* Preview Content */,
 			);
@@ -68,6 +101,57 @@
 				146B48FD2DE0E2280037167C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		146B49042DE0E24C0037167C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				146B49062DE0E2DD0037167C /* SplashView.swift */,
+				146B48F62DE0E2250037167C /* ContentView.swift */,
+				146B490C2DE0EF140037167C /* WelcomeView.swift */,
+				149C36DA2DF5B08D0098947C /* LoginView.swift */,
+				149C36E32DF5CDC70098947C /* SignupView.swift */,
+				149C36EB2DF5F4CD0098947C /* HomeView.swift */,
+				149C36E72DF5E7D40098947C /* ResetPasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		146B49052DE0E2650037167C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				146B48F82DE0E2250037167C /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		146B49082DE0E8CB0037167C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				146B49092DE0E9510037167C /* LeagueSpartan.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		146B490E2DE0F2D00037167C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				146B490F2DE0F2FF0037167C /* BlueButton.swift */,
+				146B49112DE0F3BA0037167C /* GrayBlueButton.swift */,
+				149C36DF2DF5B64F0098947C /* TextFieldView.swift */,
+				149C36E52DF5D41E0098947C /* NumberFieldView.swift */,
+				149C36E12DF5BBE20098947C /* PasswordFieldView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		149C36DC2DF5B2100098947C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				149C36DD2DF5B2520098947C /* ViewExt.swift */,
+				149C36E92DF5F2010098947C /* DateExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				146B48FE2DE0E2280037167C /* Preview Assets.xcassets in Resources */,
+				146B490A2DE0E9510037167C /* LeagueSpartan.ttf in Resources */,
 				146B48FB2DE0E2280037167C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,9 +225,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149C36E42DF5CDC70098947C /* SignupView.swift in Sources */,
+				149C36E22DF5BBE20098947C /* PasswordFieldView.swift in Sources */,
+				149C36EA2DF5F2010098947C /* DateExt.swift in Sources */,
+				149C36E62DF5D41E0098947C /* NumberFieldView.swift in Sources */,
+				149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */,
 				146B48F72DE0E2250037167C /* ContentView.swift in Sources */,
+				146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */,
+				146B49072DE0E2DD0037167C /* SplashView.swift in Sources */,
 				146B48F92DE0E2250037167C /* Item.swift in Sources */,
 				146B48F52DE0E2250037167C /* SkinFirtsApp.swift in Sources */,
+				146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */,
+				149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */,
+				149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */,
+				149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */,
+				149C36DE2DF5B2520098947C /* ViewExt.swift in Sources */,
+				146B49102DE0F2FF0037167C /* BlueButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +376,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SkinFirts/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkinFirts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,6 +405,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SkinFirts/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SkinFirts/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
