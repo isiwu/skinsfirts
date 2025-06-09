@@ -54,6 +54,8 @@ struct LoginView: View {
             .padding(.vertical)
           
           Image("fingerprint")
+            .resizable()
+//            .padding(.all, 8)
             .frame(width: 45, height: 45)
             .background(.skinFirtsGrayBlue, in: .circle)
           

@@ -17,6 +17,8 @@
 		146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B490C2DE0EF140037167C /* WelcomeView.swift */; };
 		146B49102DE0F2FF0037167C /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B490F2DE0F2FF0037167C /* BlueButton.swift */; };
 		146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B49112DE0F3BA0037167C /* GrayBlueButton.swift */; };
+		147442692DF71D4E0072AB5C /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147442682DF71D4E0072AB5C /* Doctor.swift */; };
+		1474426B2DF728D70072AB5C /* DoctorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474426A2DF728D70072AB5C /* DoctorsView.swift */; };
 		149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DA2DF5B08D0098947C /* LoginView.swift */; };
 		149C36DE2DF5B2520098947C /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DD2DF5B2520098947C /* ViewExt.swift */; };
 		149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DF2DF5B64F0098947C /* TextFieldView.swift */; };
@@ -41,6 +43,8 @@
 		146B490C2DE0EF140037167C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		146B490F2DE0F2FF0037167C /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		146B49112DE0F3BA0037167C /* GrayBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBlueButton.swift; sourceTree = "<group>"; };
+		147442682DF71D4E0072AB5C /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		1474426A2DF728D70072AB5C /* DoctorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsView.swift; sourceTree = "<group>"; };
 		149C36DA2DF5B08D0098947C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		149C36DD2DF5B2520098947C /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		149C36DF2DF5B64F0098947C /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				149C36DA2DF5B08D0098947C /* LoginView.swift */,
 				149C36E32DF5CDC70098947C /* SignupView.swift */,
 				149C36EB2DF5F4CD0098947C /* HomeView.swift */,
+				1474426A2DF728D70072AB5C /* DoctorsView.swift */,
 				149C36E72DF5E7D40098947C /* ResetPasswordView.swift */,
 			);
 			path = View;
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				146B48F82DE0E2250037167C /* Item.swift */,
+				147442682DF71D4E0072AB5C /* Doctor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,9 +236,11 @@
 				149C36EA2DF5F2010098947C /* DateExt.swift in Sources */,
 				149C36E62DF5D41E0098947C /* NumberFieldView.swift in Sources */,
 				149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */,
+				147442692DF71D4E0072AB5C /* Doctor.swift in Sources */,
 				146B48F72DE0E2250037167C /* ContentView.swift in Sources */,
 				146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */,
 				146B49072DE0E2DD0037167C /* SplashView.swift in Sources */,
+				1474426B2DF728D70072AB5C /* DoctorsView.swift in Sources */,
 				146B48F92DE0E2250037167C /* Item.swift in Sources */,
 				146B48F52DE0E2250037167C /* SkinFirtsApp.swift in Sources */,
 				146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */,
