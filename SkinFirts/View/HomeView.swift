@@ -6,21 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
   @State private var search = ""
-  var doctors = sampleDoctors
+  @Query var doctors: [Doctor]
   var body: some View {
-    ScrollView {
-      VStack {
-        HeaderView()
-        
-        AppointmentBadge()
-        
-        DoctorsWithAppointmentView()
+    NavigationStack {
+      ScrollView {
+        VStack {
+          HeaderView()
+          
+          AppointmentBadge()
+          
+          DoctorsWithAppointmentView()
+        }
       }
     }
-//    .padding(.horizontal)
   }
   
   func HeaderView() -> some View {
@@ -53,17 +55,19 @@ struct HomeView: View {
       
       HStack {
         HStack {
-          VStack {
-            Image(systemName: "stethoscope")
-            Text("Doctors")
-              .font(.custom("LeagueSpartan", size: 12))
-              .fontWeight(.light)
+          NavigationLink(destination: DoctorsView(modelDoctors: doctors)) {
+            VStack {
+              Image(systemName: "stethoscope")
+              Text("Doctors")
+                .font(.custom("LeagueSpartan", size: 12))
+                .fontWeight(.light)
+            }
+            .foregroundStyle(.skinFirtsBlue)
           }
-          .foregroundStyle(.skinFirtsBlue)
           
           VStack {
             Image(systemName: "heart")
-            Text("Doctors")
+            Text("Favorite")
               .font(.custom("LeagueSpartan", size: 12))
               .fontWeight(.light)
           }
@@ -183,32 +187,9 @@ struct HomeView: View {
         
         HStack {
           HStack {
-            HStack {
-              if doctor.stars == 5 {
-                Image(systemName: "star.fill")
-              } else {
-                Image(systemName: "star")
-              }
-                
-              Text("\(doctor.stars)")
-            }
-            .foregroundStyle(.skinFirtsBlue)
-            .frame(height: 18)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(.white, in: .rect(cornerRadius: 15))
+            RatingBadgeView(stars: doctor.stars)
             
-            HStack {
-              Image("bubble")
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-              Text("\(doctor.messages)")
-            }
-            .foregroundStyle(.skinFirtsBlue)
-            .frame(height: 18)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(.white, in: .rect(cornerRadius: 15))
+            MessagesBadgeView(messages: doctor.messages)
           }
           
           
@@ -263,4 +244,5 @@ struct Line: Shape {
 
 #Preview {
     HomeView()
+    .modelContainer(previewContainer)
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144FCF372DFB45B600D66D07 /* SampleData.swift */; };
+		1466C08C2DF82ED900B10EC0 /* SortByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C08B2DF82ED900B10EC0 /* SortByView.swift */; };
+		1466C0922DF848E400B10EC0 /* DoctorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */; };
+		1466C0942DF8560500B10EC0 /* RatingBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0932DF8560500B10EC0 /* RatingBadgeView.swift */; };
+		1466C0962DF8563C00B10EC0 /* MessagesBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0952DF8563C00B10EC0 /* MessagesBadgeView.swift */; };
+		1466C0982DF8671500B10EC0 /* DoctorsRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0972DF8671500B10EC0 /* DoctorsRatingView.swift */; };
+		1466C09A2DF8749D00B10EC0 /* DoctorsFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0992DF8749D00B10EC0 /* DoctorsFavoriteView.swift */; };
 		146B48F52DE0E2250037167C /* SkinFirtsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B48F42DE0E2250037167C /* SkinFirtsApp.swift */; };
 		146B48F72DE0E2250037167C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B48F62DE0E2250037167C /* ContentView.swift */; };
 		146B48F92DE0E2250037167C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B48F82DE0E2250037167C /* Item.swift */; };
@@ -17,6 +24,16 @@
 		146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B490C2DE0EF140037167C /* WelcomeView.swift */; };
 		146B49102DE0F2FF0037167C /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B490F2DE0F2FF0037167C /* BlueButton.swift */; };
 		146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146B49112DE0F3BA0037167C /* GrayBlueButton.swift */; };
+		1471A2BA2DFC192A0086BBC3 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2B92DFC192A0086BBC3 /* PreviewContainer.swift */; };
+		1471A2BC2DFC385C0086BBC3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */; };
+		1471A2BE2DFC69E20086BBC3 /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2BD2DFC69E20086BBC3 /* ProfileEditView.swift */; };
+		1471A2C22DFC6B430086BBC3 /* ProfileSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2C12DFC6B430086BBC3 /* ProfileSettingView.swift */; };
+		1471A2C42DFC6B7B0086BBC3 /* ProfileNotificationSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2C32DFC6B7B0086BBC3 /* ProfileNotificationSettingView.swift */; };
+		1471A2C62DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2C52DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift */; };
+		1471A2C82DFC6BD70086BBC3 /* ProfilePrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2C72DFC6BD70086BBC3 /* ProfilePrivacyPolicyView.swift */; };
+		1471A2CA2DFC6BFB0086BBC3 /* ProfileHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2C92DFC6BFB0086BBC3 /* ProfileHelpView.swift */; };
+		1471A2CC2DFC6C7F0086BBC3 /* ProfileCurrentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2CB2DFC6C7F0086BBC3 /* ProfileCurrentView.swift */; };
+		1471A2CF2DFC90B40086BBC3 /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1471A2CE2DFC90B40086BBC3 /* ProfileEditViewModel.swift */; };
 		147442692DF71D4E0072AB5C /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147442682DF71D4E0072AB5C /* Doctor.swift */; };
 		1474426B2DF728D70072AB5C /* DoctorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474426A2DF728D70072AB5C /* DoctorsView.swift */; };
 		149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36DA2DF5B08D0098947C /* LoginView.swift */; };
@@ -31,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		144FCF372DFB45B600D66D07 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		1466C08B2DF82ED900B10EC0 /* SortByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByView.swift; sourceTree = "<group>"; };
+		1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfoView.swift; sourceTree = "<group>"; };
+		1466C0932DF8560500B10EC0 /* RatingBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBadgeView.swift; sourceTree = "<group>"; };
+		1466C0952DF8563C00B10EC0 /* MessagesBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesBadgeView.swift; sourceTree = "<group>"; };
+		1466C0972DF8671500B10EC0 /* DoctorsRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsRatingView.swift; sourceTree = "<group>"; };
+		1466C0992DF8749D00B10EC0 /* DoctorsFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsFavoriteView.swift; sourceTree = "<group>"; };
 		146B48F12DE0E2250037167C /* SkinFirts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkinFirts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146B48F42DE0E2250037167C /* SkinFirtsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinFirtsApp.swift; sourceTree = "<group>"; };
 		146B48F62DE0E2250037167C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +67,16 @@
 		146B490C2DE0EF140037167C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		146B490F2DE0F2FF0037167C /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		146B49112DE0F3BA0037167C /* GrayBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBlueButton.swift; sourceTree = "<group>"; };
+		1471A2B92DFC192A0086BBC3 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1471A2BD2DFC69E20086BBC3 /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		1471A2C12DFC6B430086BBC3 /* ProfileSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingView.swift; sourceTree = "<group>"; };
+		1471A2C32DFC6B7B0086BBC3 /* ProfileNotificationSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNotificationSettingView.swift; sourceTree = "<group>"; };
+		1471A2C52DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePasswordManagerView.swift; sourceTree = "<group>"; };
+		1471A2C72DFC6BD70086BBC3 /* ProfilePrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePrivacyPolicyView.swift; sourceTree = "<group>"; };
+		1471A2C92DFC6BFB0086BBC3 /* ProfileHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHelpView.swift; sourceTree = "<group>"; };
+		1471A2CB2DFC6C7F0086BBC3 /* ProfileCurrentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCurrentView.swift; sourceTree = "<group>"; };
+		1471A2CE2DFC90B40086BBC3 /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
 		147442682DF71D4E0072AB5C /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		1474426A2DF728D70072AB5C /* DoctorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsView.swift; sourceTree = "<group>"; };
 		149C36DA2DF5B08D0098947C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -86,6 +120,7 @@
 		146B48F32DE0E2250037167C /* SkinFirts */ = {
 			isa = PBXGroup;
 			children = (
+				1471A2CD2DFC8F080086BBC3 /* ViewModel */,
 				149C36DC2DF5B2100098947C /* Extensions */,
 				146B490E2DE0F2D00037167C /* Components */,
 				146B490B2DE0E99D0037167C /* Info.plist */,
@@ -117,7 +152,18 @@
 				149C36E32DF5CDC70098947C /* SignupView.swift */,
 				149C36EB2DF5F4CD0098947C /* HomeView.swift */,
 				1474426A2DF728D70072AB5C /* DoctorsView.swift */,
+				1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */,
+				1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */,
+				1471A2CB2DFC6C7F0086BBC3 /* ProfileCurrentView.swift */,
+				1471A2BD2DFC69E20086BBC3 /* ProfileEditView.swift */,
+				1471A2C12DFC6B430086BBC3 /* ProfileSettingView.swift */,
+				1471A2C32DFC6B7B0086BBC3 /* ProfileNotificationSettingView.swift */,
+				1471A2C52DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift */,
+				1471A2C72DFC6BD70086BBC3 /* ProfilePrivacyPolicyView.swift */,
+				1471A2C92DFC6BFB0086BBC3 /* ProfileHelpView.swift */,
+				1466C0972DF8671500B10EC0 /* DoctorsRatingView.swift */,
 				149C36E72DF5E7D40098947C /* ResetPasswordView.swift */,
+				1466C0992DF8749D00B10EC0 /* DoctorsFavoriteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +173,8 @@
 			children = (
 				146B48F82DE0E2250037167C /* Item.swift */,
 				147442682DF71D4E0072AB5C /* Doctor.swift */,
+				144FCF372DFB45B600D66D07 /* SampleData.swift */,
+				1471A2B92DFC192A0086BBC3 /* PreviewContainer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,8 +195,19 @@
 				149C36DF2DF5B64F0098947C /* TextFieldView.swift */,
 				149C36E52DF5D41E0098947C /* NumberFieldView.swift */,
 				149C36E12DF5BBE20098947C /* PasswordFieldView.swift */,
+				1466C08B2DF82ED900B10EC0 /* SortByView.swift */,
+				1466C0932DF8560500B10EC0 /* RatingBadgeView.swift */,
+				1466C0952DF8563C00B10EC0 /* MessagesBadgeView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		1471A2CD2DFC8F080086BBC3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1471A2CE2DFC90B40086BBC3 /* ProfileEditViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		149C36DC2DF5B2100098947C /* Extensions */ = {
@@ -232,23 +291,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				149C36E42DF5CDC70098947C /* SignupView.swift in Sources */,
+				1471A2C42DFC6B7B0086BBC3 /* ProfileNotificationSettingView.swift in Sources */,
+				1471A2BC2DFC385C0086BBC3 /* ProfileView.swift in Sources */,
 				149C36E22DF5BBE20098947C /* PasswordFieldView.swift in Sources */,
 				149C36EA2DF5F2010098947C /* DateExt.swift in Sources */,
 				149C36E62DF5D41E0098947C /* NumberFieldView.swift in Sources */,
 				149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */,
 				147442692DF71D4E0072AB5C /* Doctor.swift in Sources */,
+				1471A2CF2DFC90B40086BBC3 /* ProfileEditViewModel.swift in Sources */,
+				1471A2CC2DFC6C7F0086BBC3 /* ProfileCurrentView.swift in Sources */,
+				1466C0942DF8560500B10EC0 /* RatingBadgeView.swift in Sources */,
+				1471A2C62DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift in Sources */,
+				1471A2C22DFC6B430086BBC3 /* ProfileSettingView.swift in Sources */,
+				144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */,
+				1466C0982DF8671500B10EC0 /* DoctorsRatingView.swift in Sources */,
+				1471A2BA2DFC192A0086BBC3 /* PreviewContainer.swift in Sources */,
 				146B48F72DE0E2250037167C /* ContentView.swift in Sources */,
 				146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */,
 				146B49072DE0E2DD0037167C /* SplashView.swift in Sources */,
+				1471A2BE2DFC69E20086BBC3 /* ProfileEditView.swift in Sources */,
 				1474426B2DF728D70072AB5C /* DoctorsView.swift in Sources */,
 				146B48F92DE0E2250037167C /* Item.swift in Sources */,
+				1471A2C82DFC6BD70086BBC3 /* ProfilePrivacyPolicyView.swift in Sources */,
 				146B48F52DE0E2250037167C /* SkinFirtsApp.swift in Sources */,
+				1471A2CA2DFC6BFB0086BBC3 /* ProfileHelpView.swift in Sources */,
 				146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */,
 				149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */,
+				1466C09A2DF8749D00B10EC0 /* DoctorsFavoriteView.swift in Sources */,
 				149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */,
 				149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */,
 				149C36DE2DF5B2520098947C /* ViewExt.swift in Sources */,
+				1466C0962DF8563C00B10EC0 /* MessagesBadgeView.swift in Sources */,
+				1466C0922DF848E400B10EC0 /* DoctorInfoView.swift in Sources */,
 				146B49102DE0F2FF0037167C /* BlueButton.swift in Sources */,
+				1466C08C2DF82ED900B10EC0 /* SortByView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

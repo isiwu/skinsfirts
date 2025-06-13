@@ -38,4 +38,40 @@ extension View {
       self.fontWeight(.black)
     }
   }
+  
+  @ViewBuilder
+  func navigationContent(_ title: String, dismiss: DismissAction) -> some View {
+    self.toolbar(content: {
+      ToolbarItem(placement: .topBarLeading) {
+        Image("arrowback")
+          .onTapGesture(perform: {
+            dismiss()
+          })
+      }
+      
+      ToolbarItem(placement: .principal) {
+        Text(title)
+          .foregroundStyle(.skinFirtsBlue)
+          .font(.title)
+          .fontweight(600)
+      }
+      
+      ToolbarItem(placement: .topBarTrailing) {
+        HStack {
+          Image("search")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .padding(.all, 4)
+            .frame(width: 30, height: 30)
+            .background(Color.skinFirtsGrayBlue, in: .circle)
+          Image("slider-blue")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .padding(.all, 4)
+            .frame(width: 30, height: 30)
+            .background(Color.skinFirtsGrayBlue, in: .circle)
+        }
+      }
+    })
+  }
 }
