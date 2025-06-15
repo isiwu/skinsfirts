@@ -14,10 +14,10 @@ struct ProfileEditView: View {
   @State private var showDate = false
   var body: some View {
     ScrollView {
-      VStack {
+      VStack(spacing: 40) {
         ProfileLogoEditView()
         
-        VStack(spacing: 25) {
+        VStack(spacing: 30) {
           TextInputView(label: "Full Name", text: $person.fullName)
           
           TextInputView(label: "Phone Number", text: $person.phone)
@@ -49,30 +49,13 @@ struct ProfileEditView: View {
               })
           }
         }
+        
+        BlueButton(buttonText: "Update Profile")
+          .padding(.top, 45)
       }
       .padding(.horizontal)
       .navigationBarBackButtonHidden(true)
-      .toolbar(content: {
-        ToolbarItem(placement: .topBarLeading) {
-          Image("arrowback")
-            .overlay(content: {
-              Circle()
-                .frame(width: 40, height: 40)
-                .background()
-                .blendMode(.destinationOver)
-                .onTapGesture(perform: {
-                  dismiss()
-                })
-            })
-        }
-        
-        ToolbarItem(placement: .principal) {
-          Text(title)
-            .foregroundStyle(.skinFirtsBlue)
-            .font(.title)
-            .fontweight(600)
-        }
-      })
+      .shortNavigationContent(title, dismiss: dismiss)
     }
   }
   

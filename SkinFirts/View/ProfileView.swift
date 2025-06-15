@@ -106,7 +106,7 @@ struct ProfileView: View {
         .listRowBackground(Color.white)
       }
       .listStyle(.plain)
-      .padding(.horizontal)
+      .padding(.horizontal, 2)
       .navigationBarBackButtonHidden(true)
       .toolbar(content: {
         ToolbarItem(placement: .principal) {

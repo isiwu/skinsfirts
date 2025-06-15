@@ -74,4 +74,36 @@ extension View {
       }
     })
   }
+  
+  func shortNavigationContent(_ title: String, dismiss: DismissAction) -> some View {
+    self.toolbar(content: {
+      ToolbarItem(placement: .topBarLeading) {
+        Image("arrowback")
+          .onTapGesture(perform: {
+            dismiss()
+          })
+      }
+      
+      ToolbarItem(placement: .principal) {
+        Text(title)
+          .foregroundStyle(.skinFirtsBlue)
+          .font(.title)
+          .fontweight(600)
+      }
+    })
+  }
+  
+  @ViewBuilder
+  func formHiddenBackground() -> some View {
+    if #available(iOS 16.0, *) {
+      self.scrollContentBackground(.hidden)
+    } else {
+      self.onAppear(perform: {
+        UITableView.appearance().backgroundColor = .clear
+      })
+      .onDisappear {
+        UITableView.appearance().backgroundColor = .systemGroupedBackground
+      }
+    }
+  }
 }

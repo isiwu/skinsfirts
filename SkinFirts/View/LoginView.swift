@@ -26,22 +26,19 @@ struct LoginView: View {
           
           VStack(spacing: 14) {
             PasswordFieldView(value: $password)
-            Text("Forget Password")
-              .font(.custom("LeagueSpartan", size: 12))
-              .fontWeight(.medium)
-              .foregroundStyle(.skinFirtsBlue)
-              .overlay(content: {
-                Rectangle()
-                  .fill(.black)
-                  .frame(width: 90, height: 30)
-                  .blendMode(.destinationOver)
-                  .onTapGesture {
-                    withAnimation(.snappy) {
-  //                    task.isCompleted.toggle()
-                    }
-                  }
-              })
-              .hspacing(.trailing)
+            NavigationLink(destination: ResetPasswordView()) {
+              Text("Forget Password")
+                .font(.custom("LeagueSpartan", size: 16))
+                .fontWeight(.medium)
+                .foregroundStyle(.skinFirtsBlue)
+                .overlay(content: {
+                  Rectangle()
+                    .fill(.black)
+                    .frame(width: 90, height: 30)
+                    .blendMode(.destinationOver)
+                })
+                .hspacing(.trailing)
+            }
           }
         }
 //        .padding(.top, 20)

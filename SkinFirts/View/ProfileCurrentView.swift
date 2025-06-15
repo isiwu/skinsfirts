@@ -8,20 +8,81 @@
 import SwiftUI
 
 struct ProfileCurrentView: View {
-  @Binding var currentView: CurrentView
+  @State private var showSheet = false
+
   var body: some View {
-    if currentView == .profileEdit {
-      ProfileEditView()
-    } else if currentView == .setting {
-      ProfileSettingView()
-    } else if currentView == .privacy {
-      ProfilePrivacyPolicyView()
-    } else if currentView == .help {
-      ProfileHelpView()
+    ZStack {
+      Button("Present") {
+        showSheet.toggle()
+      }
+      .font(.largeTitle)
+      
+      if showSheet {
+//        ZStack {
+//          Button {
+//            showSheet.toggle()
+//          } label: {
+//            Image(systemName: "xmark.circle")
+//              .font(.largeTitle)
+//              .foregroundColor(.gray)
+//          }
+//          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+//          .padding()
+//        }
+//        .background(.ultraThickMaterial)
+        VStack {
+          Button {
+            showSheet.toggle()
+          } label: {
+            Image(systemName: "xmark.circle")
+              .font(.largeTitle)
+              .foregroundColor(.gray)
+          }
+          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+          .padding()
+        }
+        .background(Color.gray.opacity(0.5))
+      }
     }
   }
 }
 
+struct PresentingSheetView: View {
+   @State private var showSheet = false
+
+   var body: some View {
+       Button("Present") {
+          showSheet.toggle()
+       }.font(.largeTitle)
+        .fullScreenCover(isPresented: $showSheet) {
+              SheetView()
+       }
+   }
+}
+
+struct SheetView: View {
+    @Environment(\.presentationMode) var presentationMode
+ 
+     var body: some View {
+    
+         ZStack {
+            Button {
+               presentationMode.wrappedValue.dismiss()
+             } label: {
+                Image(systemName: "xmark.circle")
+                .font(.largeTitle)
+                .foregroundColor(.gray)
+             }
+       }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+        .padding()
+   }
+}
+
 #Preview {
-  ProfileCurrentView(currentView: .constant(.profileEdit))
+  ProfileCurrentView()
+}
+
+#Preview("2") {
+  PresentingSheetView()
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142C905C2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C905B2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift */; };
+		142C905E2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C905D2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift */; };
+		142C90602DFF419A007FB15B /* NotificationSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C905F2DFF419A007FB15B /* NotificationSettingView.swift */; };
+		142C90622DFF5326007FB15B /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C90612DFF5326007FB15B /* LogoutView.swift */; };
 		144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144FCF372DFB45B600D66D07 /* SampleData.swift */; };
 		1466C08C2DF82ED900B10EC0 /* SortByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C08B2DF82ED900B10EC0 /* SortByView.swift */; };
 		1466C0922DF848E400B10EC0 /* DoctorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */; };
@@ -48,6 +52,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		142C905B2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNotificationSettingViewModel.swift; sourceTree = "<group>"; };
+		142C905D2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePasswordManagerViewModel.swift; sourceTree = "<group>"; };
+		142C905F2DFF419A007FB15B /* NotificationSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingView.swift; sourceTree = "<group>"; };
+		142C90612DFF5326007FB15B /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		144FCF372DFB45B600D66D07 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		1466C08B2DF82ED900B10EC0 /* SortByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByView.swift; sourceTree = "<group>"; };
 		1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfoView.swift; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				1474426A2DF728D70072AB5C /* DoctorsView.swift */,
 				1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */,
 				1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */,
+				142C90612DFF5326007FB15B /* LogoutView.swift */,
 				1471A2CB2DFC6C7F0086BBC3 /* ProfileCurrentView.swift */,
 				1471A2BD2DFC69E20086BBC3 /* ProfileEditView.swift */,
 				1471A2C12DFC6B430086BBC3 /* ProfileSettingView.swift */,
@@ -196,6 +205,7 @@
 				149C36E52DF5D41E0098947C /* NumberFieldView.swift */,
 				149C36E12DF5BBE20098947C /* PasswordFieldView.swift */,
 				1466C08B2DF82ED900B10EC0 /* SortByView.swift */,
+				142C905F2DFF419A007FB15B /* NotificationSettingView.swift */,
 				1466C0932DF8560500B10EC0 /* RatingBadgeView.swift */,
 				1466C0952DF8563C00B10EC0 /* MessagesBadgeView.swift */,
 			);
@@ -206,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				1471A2CE2DFC90B40086BBC3 /* ProfileEditViewModel.swift */,
+				142C905D2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift */,
+				142C905B2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 				1471A2CF2DFC90B40086BBC3 /* ProfileEditViewModel.swift in Sources */,
 				1471A2CC2DFC6C7F0086BBC3 /* ProfileCurrentView.swift in Sources */,
 				1466C0942DF8560500B10EC0 /* RatingBadgeView.swift in Sources */,
+				142C905E2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift in Sources */,
 				1471A2C62DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift in Sources */,
 				1471A2C22DFC6B430086BBC3 /* ProfileSettingView.swift in Sources */,
 				144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */,
@@ -309,6 +322,7 @@
 				146B48F72DE0E2250037167C /* ContentView.swift in Sources */,
 				146B490D2DE0EF140037167C /* WelcomeView.swift in Sources */,
 				146B49072DE0E2DD0037167C /* SplashView.swift in Sources */,
+				142C90602DFF419A007FB15B /* NotificationSettingView.swift in Sources */,
 				1471A2BE2DFC69E20086BBC3 /* ProfileEditView.swift in Sources */,
 				1474426B2DF728D70072AB5C /* DoctorsView.swift in Sources */,
 				146B48F92DE0E2250037167C /* Item.swift in Sources */,
@@ -316,10 +330,12 @@
 				146B48F52DE0E2250037167C /* SkinFirtsApp.swift in Sources */,
 				1471A2CA2DFC6BFB0086BBC3 /* ProfileHelpView.swift in Sources */,
 				146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */,
+				142C90622DFF5326007FB15B /* LogoutView.swift in Sources */,
 				149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */,
 				1466C09A2DF8749D00B10EC0 /* DoctorsFavoriteView.swift in Sources */,
 				149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */,
 				149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */,
+				142C905C2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift in Sources */,
 				149C36DE2DF5B2520098947C /* ViewExt.swift in Sources */,
 				1466C0962DF8563C00B10EC0 /* MessagesBadgeView.swift in Sources */,
 				1466C0922DF848E400B10EC0 /* DoctorInfoView.swift in Sources */,

@@ -14,6 +14,8 @@ struct ResetPasswordView: View {
   var body: some View {
     VStack(spacing: 35) {
       Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ")
+        .font(.caption)
+        .fontweight(300)
         .hspacing(.leading)
       
       VStack(spacing: 15) {
