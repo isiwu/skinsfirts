@@ -19,6 +19,12 @@ struct ProfileView: View {
     ["icon": "questionmark", "text": "Help"],
     ["icon": "square.and.arrow.up", "text": "Logout"],
   ]
+  var views: [[String: Any]] = [
+    ["profile": ProfileEditView()],
+    ["privacy policy": ProfilePrivacyPolicyView()],
+    ["settings": ProfileSettingView()],
+    ["help": ProfileHelpView()]
+  ]
   var body: some View {
     NavigationStack {
       List {
@@ -29,10 +35,30 @@ struct ProfileView: View {
         ForEach(contents.indices, id: \.self) { index in
           if let text = contents[index]["text"], text != "Logout" {
             ZStack {
-              NavigationLink(destination: ProfileCurrentView(currentView: $currentView)) {
-                EmptyView()
+              if text == "Profile" || text == "Privacy Policy" || text == "Settings" || text == "Help" {
+                if text.lowercased() == "profile" {
+                  NavigationLink(destination: ProfileEditView()) {
+                    EmptyView()
+                  }
+                  .opacity(0)
+                } else if text.lowercased() == "privacy policy" {
+                  NavigationLink(destination: ProfilePrivacyPolicyView()) {
+                    EmptyView()
+                  }
+                  .opacity(0)
+                } else if text.lowercased() == "settings" {
+                  NavigationLink(destination: ProfileSettingView()) {
+                    EmptyView()
+                  }
+                  .opacity(0)
+                } else if text.lowercased() == "help" {
+                  NavigationLink(destination: ProfileHelpView()) {
+                    EmptyView()
+                  }
+                  .opacity(0)
+                }
+                
               }
-              .opacity(0)
               
               HStack {
                 HStack {
@@ -43,7 +69,7 @@ struct ProfileView: View {
                     .padding(.all, 10)
                     .foregroundStyle(.skinFirtsBlue)
                     .background(Color.skinFirtsGrayBlue, in: .circle)
-                  Image(systemName: "wallet.bifold")
+//                  Image(systemName: "wallet.bifold")
                   
                   Text(contents[index]["text"]!)
                     .font(.title)
@@ -56,19 +82,6 @@ struct ProfileView: View {
                   .font(.system(size: 25))
                   .foregroundStyle(.skinFirtsGrayBlue)
               }
-              .onTapGesture(perform: {
-                if let text = contents[index]["text"] {
-                  if text == "Profile" {
-                    currentView = .profileEdit
-                  } else if text == "Privacy Policy" {
-                    currentView = .privacy
-                  } else if text == "Settings" {
-                    currentView = .setting
-                  } else if text == "Help" {
-                    currentView = .help
-                  }
-                }
-              })
             }
             .listRowSeparator(.hidden)
             .listRowBackground(Color.white)
