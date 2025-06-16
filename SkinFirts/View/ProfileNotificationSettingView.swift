@@ -69,7 +69,6 @@ struct ProfileNotificationSettingView: View {
       .listRowSeparator(.hidden)
       .padding(.vertical)
     }
-//    .listRowBackground(Color.white)
     .tint(.skinFirtsBlue)
     .formHiddenBackground()
     .shortNavigationContent("Notification Setting", dismiss: dismiss)

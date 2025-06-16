@@ -14,6 +14,8 @@ struct SkinFirtsApp: App {
         let schema = Schema([
             Item.self,
             Doctor.self,
+            Faq.self,
+            Service.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -30,4 +32,11 @@ struct SkinFirtsApp: App {
         }
         .modelContainer(sharedModelContainer)
     }
+  
+  init() {
+      let appearance = UINavigationBarAppearance()
+      appearance.shadowColor = .clear
+      UINavigationBar.appearance().standardAppearance = appearance
+      UINavigationBar.appearance().scrollEdgeAppearance = appearance
+  }
 }

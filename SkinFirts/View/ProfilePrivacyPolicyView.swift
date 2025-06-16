@@ -49,7 +49,7 @@ struct ProfilePrivacyPolicyView: View {
         }
       }
       .padding(.horizontal)
-    .shortNavigationContent("Privacy Policy", dismiss: dismiss)
+      .shortNavigationContent("Privacy Policy", dismiss: dismiss)
     }
   }
 }

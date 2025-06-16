@@ -9,8 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Doctor: Identifiable {
-  var id = UUID()
+class Doctor {
   var name: String
   var field: String
   var image: String
@@ -30,8 +29,7 @@ class Doctor: Identifiable {
   }
   
   
-  init(id: UUID = UUID(), name: String="", field: String="", image: String="", experienceLevel: Int=14, stars: Int=4, messages: Int=30, isFavorite: Bool=true, focus: String="The impact of hormonal imbalances on skin conditions, specializing in acne, hirsutism, and other skin disorders.", availability: String="Mon-Sat / 9:00AM - 5:00PM", profile: String="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", careerPath: String="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", highlight: String="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", gender: Gender = .female) {
-    self.id = id
+  init(name: String="", field: String="", image: String="", experienceLevel: Int=14, stars: Int=4, messages: Int=30, isFavorite: Bool=true, focus: String="The impact of hormonal imbalances on skin conditions, specializing in acne, hirsutism, and other skin disorders.", availability: String="Mon-Sat / 9:00AM - 5:00PM", profile: String="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", careerPath: String="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", highlight: String="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", gender: Gender = .female) {
     self.name = name
     self.field = field
     self.image = image

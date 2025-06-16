@@ -56,6 +56,7 @@ struct PresentingSheetView: View {
        }.font(.largeTitle)
         .fullScreenCover(isPresented: $showSheet) {
               SheetView()
+//          LogoutView()
        }
    }
 }
@@ -65,7 +66,7 @@ struct SheetView: View {
  
      var body: some View {
     
-         ZStack {
+         VStack {
             Button {
                presentationMode.wrappedValue.dismiss()
              } label: {

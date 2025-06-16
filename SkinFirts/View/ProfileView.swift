@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
   @Environment(\.dismiss) var dismiss
   @State private var currentView: CurrentView = .profileEdit
+  @State private var logout = false
   var contents = [
     ["icon": "person", "text": "Profile"],
     ["icon": "heart", "text": "Favorite"],
@@ -18,12 +19,6 @@ struct ProfileView: View {
     ["icon": "gearshape", "text": "Settings"],
     ["icon": "questionmark", "text": "Help"],
     ["icon": "square.and.arrow.up", "text": "Logout"],
-  ]
-  var views: [[String: Any]] = [
-    ["profile": ProfileEditView()],
-    ["privacy policy": ProfilePrivacyPolicyView()],
-    ["settings": ProfileSettingView()],
-    ["help": ProfileHelpView()]
   ]
   var body: some View {
     NavigationStack {
@@ -104,6 +99,9 @@ struct ProfileView: View {
         }
         .listRowSeparator(.hidden)
         .listRowBackground(Color.white)
+        .onTapGesture(perform: {
+          logout.toggle()
+        })
       }
       .listStyle(.plain)
       .padding(.horizontal, 2)
@@ -115,6 +113,11 @@ struct ProfileView: View {
             .font(.title)
             .fontweight(600)
         }
+      })
+      .sheet(isPresented: $logout, content: {
+        LogoutView()
+          .presentationDetents([.height(250)])
+          .presentationCornerRadius(30)
       })
     }
   }
@@ -137,6 +140,27 @@ struct ProfileView: View {
 
       Spacer()
     }
+  }
+  
+  func LogoutView() -> some View {
+    VStack(spacing: 30) {
+      Text("Logout")
+        .font(.title)
+        .fontweight(500)
+        .foregroundStyle(.skinFirtsBlue)
+      
+      Text("are you sure you want to log out?")
+        .font(.title3)
+        .fontweight(400)
+        .foregroundStyle(.black)
+      
+      HStack {
+        GrayBlueButton(buttonText: "Cancel")
+        
+        BlueButton(buttonText: "Yes, Logout")
+      }
+    }
+    .padding(.horizontal)
   }
 }
 
