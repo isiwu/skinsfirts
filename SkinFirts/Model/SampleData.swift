@@ -39,4 +39,20 @@ struct SampleData {
     Service(name: "Dermato-Endocrinology", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque congue lorem, vel tincidunt tortor placerat a. Proin ac diam quam. Aenean in sagittis magna, ut feugiat diam."),
     Service(name: "Dermato-Endocrinology", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque congue lorem, vel tincidunt tortor placerat a. Proin ac diam quam. Aenean in sagittis magna, ut feugiat diam."),
   ]
+  static var notifications = [
+    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .schedule),
+    Notification(title: "Scheduled Change", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .schedule),
+    Notification(title: "Medical Notes", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .schedule),
+    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: 86400), category: .schedule),
+    Notification(title: "Medical History Update", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: 1296000), category: .schedule),
+    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: 1296000), category: .schedule)
+  ]
+  static var chats = [
+    Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", seen: false, date: .now, messageType: .text, sender: .owner),
+    Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", seen: false, date: .now, messageType: .text, sender: .user),
+    Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", seen: false, date: .now, messageType: .text, sender: .owner),
+    Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", seen: false, date: .now, messageType: .text, sender: .user),
+    Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", seen: false, date: .now, messageType: .text, sender: .owner),
+    Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", seen: false, date: .now, messageType: .text, sender: .owner)
+  ]
 }

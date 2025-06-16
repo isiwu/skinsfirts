@@ -16,6 +16,8 @@ struct SkinFirtsApp: App {
             Doctor.self,
             Faq.self,
             Service.self,
+            Notification.self,
+            Chat.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

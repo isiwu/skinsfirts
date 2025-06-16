@@ -11,7 +11,7 @@ import SwiftData
 @MainActor
 let previewContainer: ModelContainer = {
   do {
-    let container = try ModelContainer(for: Doctor.self, Faq.self, Service.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+    let container = try ModelContainer(for: Doctor.self, Faq.self, Service.self, Notification.self, Chat.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
     let modelContext = container.mainContext
     
     if try modelContext.fetch(FetchDescriptor<Doctor>()).isEmpty {
@@ -24,6 +24,14 @@ let previewContainer: ModelContainer = {
     
     if try modelContext.fetch(FetchDescriptor<Service>()).isEmpty {
       SampleData.services.forEach { container.mainContext.insert($0)}
+    }
+    
+    if try modelContext.fetch(FetchDescriptor<Notification>()).isEmpty {
+      SampleData.notifications.forEach { container.mainContext.insert($0)}
+    }
+    
+    if try modelContext.fetch(FetchDescriptor<Chat>()).isEmpty {
+      SampleData.chats.forEach { container.mainContext.insert($0)}
     }
     
     return container
