@@ -53,6 +53,7 @@
 		149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E72DF5E7D40098947C /* ResetPasswordView.swift */; };
 		149C36EA2DF5F2010098947C /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E92DF5F2010098947C /* DateExt.swift */; };
 		149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36EB2DF5F4CD0098947C /* HomeView.swift */; };
+		14B6EA752E0191FB00804B9C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6EA742E0191FB00804B9C /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		149C36E72DF5E7D40098947C /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		149C36E92DF5F2010098947C /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		149C36EB2DF5F4CD0098947C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14B6EA742E0191FB00804B9C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */,
 				1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */,
 				142716BD2E0087B100D36AD4 /* NotificationView.swift */,
+				14B6EA742E0191FB00804B9C /* MessageView.swift */,
 				1471A2CB2DFC6C7F0086BBC3 /* ProfileCurrentView.swift */,
 				1471A2BD2DFC69E20086BBC3 /* ProfileEditView.swift */,
 				1471A2C12DFC6B430086BBC3 /* ProfileSettingView.swift */,
@@ -342,6 +345,7 @@
 				146B48F92DE0E2250037167C /* Item.swift in Sources */,
 				1471A2C82DFC6BD70086BBC3 /* ProfilePrivacyPolicyView.swift in Sources */,
 				146B48F52DE0E2250037167C /* SkinFirtsApp.swift in Sources */,
+				14B6EA752E0191FB00804B9C /* MessageView.swift in Sources */,
 				142716C22E0095BC00D36AD4 /* Chat.swift in Sources */,
 				142716BC2E00327A00D36AD4 /* Service.swift in Sources */,
 				1471A2CA2DFC6BFB0086BBC3 /* ProfileHelpView.swift in Sources */,
