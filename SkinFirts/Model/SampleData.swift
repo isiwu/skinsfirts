@@ -42,10 +42,10 @@ struct SampleData {
   static var notifications = [
     Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .schedule),
     Notification(title: "Scheduled Change", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .schedule),
-    Notification(title: "Medical Notes", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .schedule),
-    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: 86400), category: .schedule),
-    Notification(title: "Medical History Update", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: 1296000), category: .schedule),
-    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: 1296000), category: .schedule)
+    Notification(title: "Medical Notes", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: .now, category: .note),
+    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: -86400), category: .schedule),
+    Notification(title: "Medical History Update", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: -1296000), category: .history),
+    Notification(title: "Scheduled Appointment", message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", date: Date(timeIntervalSinceNow: -1296000), category: .schedule)
   ]
   static var chats = [
     Chat(body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", seen: false, date: .now, messageType: .text, sender: .owner),

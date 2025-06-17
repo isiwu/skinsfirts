@@ -71,6 +71,7 @@ struct ProfileNotificationSettingView: View {
     }
     .tint(.skinFirtsBlue)
     .formHiddenBackground()
+    .navigationBarTitleDisplayMode(.inline)
     .shortNavigationContent("Notification Setting", dismiss: dismiss)
   }
 }
