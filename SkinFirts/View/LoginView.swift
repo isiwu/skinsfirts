@@ -84,6 +84,7 @@ struct LoginView: View {
             .fontWeight(.semibold)
         }
       })
+      .toolbarTitleDisplayMode(.inline)
     }
   }
 }
