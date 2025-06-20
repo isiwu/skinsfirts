@@ -36,6 +36,7 @@ struct DoctorsView: View {
         .padding(.horizontal, 20)
         .navigationBarBackButtonHidden(true)
         .navigationContent(currentSort.rawValue, dismiss: dismiss)
+        .toolbarTitleDisplayMode(.inline)
         .onChange(of: currentSort) {
           if currentSort == .male || currentSort == .female {
             doctors = modelDoctors.filter { $0.gender.rawValue == currentSort.rawValue.lowercased() }

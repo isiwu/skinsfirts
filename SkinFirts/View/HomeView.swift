@@ -40,16 +40,19 @@ struct HomeView: View {
         Spacer()
         
         HStack {
-          Image(systemName: "bell.badge")
-//            .foregroundStyle(.skinFirtsBlue)
-            .font(.system(size: 25))
-            .frame(width: 38, height: 38)
-            .background(.skinFirtsGrayBlue, in: .circle)
+          NavigationLink(destination: NotificationView()) {
+            Image(systemName: "bell.badge")
+              .font(.system(size: 25))
+              .frame(width: 38, height: 38)
+              .background(.skinFirtsGrayBlue, in: .circle)
+          }
           
-          Image(systemName: "gearshape")
-            .font(.system(size: 25))
-            .frame(width: 38, height: 38)
-            .background(.skinFirtsGrayBlue, in: .circle)
+          NavigationLink(destination: ProfileView()) {
+            Image(systemName: "gearshape")
+              .font(.system(size: 25))
+              .frame(width: 38, height: 38)
+              .background(.skinFirtsGrayBlue, in: .circle)
+          }
         }
       }
       

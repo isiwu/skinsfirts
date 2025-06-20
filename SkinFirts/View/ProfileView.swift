@@ -106,14 +106,9 @@ struct ProfileView: View {
       .listStyle(.plain)
       .padding(.horizontal, 2)
       .navigationBarBackButtonHidden(true)
-      .toolbar(content: {
-        ToolbarItem(placement: .principal) {
-          Text("My Profile")
-            .foregroundStyle(.skinFirtsBlue)
-            .font(.title)
-            .fontweight(600)
-        }
-      })
+      .navigationBarTitleDisplayMode(.inline)
+      .navigationContent("My Profile", dismiss: dismiss)
+      .toolbarBackground(Color.white, for: .navigationBar)
       .sheet(isPresented: $logout, content: {
         LogoutView()
           .presentationDetents([.height(250)])

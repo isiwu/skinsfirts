@@ -24,6 +24,14 @@ extension Date {
     return true
   }
   
+  var startOfMonth: Date {
+    Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+  }
+  
+  var endOfMonth: Date {
+    Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth)!
+  }
+  
   func isSameDate(date: Date) -> Bool {
     Calendar.current.isDate(date, inSameDayAs: self)
   }

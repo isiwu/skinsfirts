@@ -55,6 +55,7 @@ struct ProfileEditView: View {
       }
       .padding(.horizontal)
       .navigationBarBackButtonHidden(true)
+      .toolbarBackground(Color.white, for: .navigationBar)
       .shortNavigationContent(title, dismiss: dismiss)
     }
   }
