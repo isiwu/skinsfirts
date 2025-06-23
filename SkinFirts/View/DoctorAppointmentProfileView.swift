@@ -10,9 +10,8 @@ import SwiftUI
 struct DoctorAppointmentProfileView: View {
   var doctor: Doctor
   var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  var date = Date()
-  var calendar = [[Int]]()
-  @State var a = 1
+  @State private var date = Date()
+  @State private var calendar = [AvailableDate]()
   @Environment(\.dismiss) var dismiss
   var body: some View {
     NavigationStack {
@@ -33,6 +32,8 @@ struct DoctorAppointmentProfileView: View {
               .font(.footnote)
               .fontweight(300)
           }
+          .padding(.top)
+          .padding(.bottom)
         }
         .padding(.horizontal)
         
@@ -42,11 +43,19 @@ struct DoctorAppointmentProfileView: View {
             
             HStack {
               Image(systemName: "lessthan")
-              Text("Month")
+                .onTapGesture(perform: {
+                  getPrevMonth()
+                  getCalendar()
+                })
+              Text("\(date.format("MMM")), \(date.format("YYYY"))")
                 .textCase(.uppercase)
                 .font(.title2)
                 .fontweight(500)
               Image(systemName: "greaterthan")
+                .onTapGesture(perform: {
+                  getNextMonth()
+                  getCalendar()
+                })
             }
             .foregroundStyle(.skinFirtsBlue)
             
@@ -58,15 +67,38 @@ struct DoctorAppointmentProfileView: View {
               Weekday(weekday: weekdays[index])
             }
           }
+          .padding(.horizontal)
           
-          GetCalendar()
+          LazyVGrid(columns: [
+            GridItem(.adaptive(minimum: 80)),
+            GridItem(.adaptive(minimum: 80)),
+            GridItem(.adaptive(minimum: 80)),
+            GridItem(.adaptive(minimum: 80)),
+            GridItem(.adaptive(minimum: 80)),
+            GridItem(.adaptive(minimum: 80)),
+            GridItem(.adaptive(minimum: 80))
+          ], spacing: 16) {
+            ForEach(calendar.indices, id: \.self) { index in
+              if calendar[index].available {
+                NavigationLink(destination: ScheduleView()) {
+                  Text(calendar[index].date)
+                    .opacity(calendar[index].available ? 1 : 0.3)
+                }
+              } else {
+                Text(calendar[index].date)
+                  .opacity(calendar[index].available ? 1 : 0.3)
+              }
+            }
+          }
+          .padding(.top, 25)
+          .background(Color.white, in: .rect(cornerRadius: 20))
         }
         .padding(.top, 20)
         .padding(.horizontal)
         .padding(.bottom)
         .background(Color.skinFirtsGrayBlue)
         .onAppear(perform: {
-          
+          getCalendar()
         })
       }
       .navigationBarBackButtonHidden(true)
@@ -271,29 +303,50 @@ struct DoctorAppointmentProfileView: View {
       .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 25))
   }
   
-  @ViewBuilder
-  func GetCalendar() -> some View {
-    let startWeekday = date.startOfMonth.format("EE")
-    let endDate = Int(date.endOfMonth.format("dd"))!
+  func getCalendar() {
+    let daysInMonth = date.daysInMonth
+    let weekDayStart = date.weekDayStart
+    calendar.removeAll()
     
-    if startWeekday == "Sun" {
-      VStack {
-        ForEach(1..<6) { row in
-          HStack {
-            ForEach(1..<8) { column in
-              if a <= endDate {
-                makeView()
-              }
-            }
-          }
+    var count = 1
+    
+    while count <= 42 {
+      if count < weekDayStart || ((count - weekDayStart) + 1) > daysInMonth {
+        calendar.append(AvailableDate(date: "", available: false))
+      } else {
+//        calendar.append(String((count - weekDayStart) + 1))
+        let date = ((count - weekDayStart) + 1)
+        var availableDate = AvailableDate()
+        if [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28].contains(date) {
+          availableDate.date = String(date)
+        } else {
+          availableDate.date = String(date)
+          availableDate.available = true
         }
+        
+        calendar.append(availableDate)
       }
+      
+      count += 1
     }
   }
   
-  func makeView() -> some View {
-    self.a += 1
-    return Text("\(a)")
+  func getNextMonth() {
+    date = self.date.nextMonth
+  }
+  
+  func getPrevMonth() {
+    date = self.date.prevMonth
+  }
+}
+
+struct AvailableDate {
+  var date: String
+  var available: Bool
+  
+  init(date: String="", available: Bool=false) {
+    self.date = date
+    self.available = available
   }
 }
 

@@ -11,20 +11,38 @@ struct ScheduleView: View {
   @State private var email = ""
   @State private var age = ""
   @State private var editor = ""
-  var times = [["9:00AM", "9:30AM", "10:00AM", "10:30AM"], ["11: 00AM", "12:00PM", "12:30PM", "1:00PM"], ["2:00PM", "2:30PM", "3:00PM", "3:30PM"]]
+  @State private var gender = "male"
+  var times = [Time(time: "9:00AM"), Time(time: "9:30AM"), Time(time: "10:00AM"), Time(time: "10:30AM"), Time(time: "11: 00AM"), Time(time: "11: 30AM"), Time(time: "12:00PM"), Time(time: "12:30PM"), Time(time: "1:00PM"), Time(time: "1:30PM"), Time(time: "2:00PM"), Time(time: "2:30PM"), Time(time: "3:00PM"), Time(time: "3:30PM"), Time(time: "4:00PM")
+  ]
+  @State private var pateint = "another person"
+  @State private var currentDate = Date()
+  @State private var weekDaysSlider: [Date.WeekDay] = []
+  @State private var currentWeekIndex = 1
+  @State private var currentWeek = false
+  @Namespace private var pateintEffect
+  @Namespace private var genderEffect
   var body: some View {
-    VStack {
+    NavigationStack {
       ScrollView {
         VStack {
           VStack {
             Text("Month")
             HStack {
-              ForEach(1..<8) { i in
-                Text("\(i)")
+              Image(systemName: "lessthan")
+                .font(.system(size: 20))
+              ForEach(weekDaysSlider.indices, id: \.self) { index in
+                WeekDaysView(day: weekDaysSlider[index])
               }
+              Image(systemName: "greaterthan")
+                .font(.system(size: 20))
+                .onTapGesture(perform: {
+                 
+                })
             }
           }
-          .hspacing(.leading)
+          .frame(maxWidth: .infinity)
+          .padding(.top)
+          .padding(.bottom, 30)
           .background(Color.skinFirtsGrayBlue)
           
           VStack(spacing: 25) {
@@ -34,11 +52,14 @@ struct ScheduleView: View {
                 .fontweight(500)
                 .foregroundStyle(.skinFirtsBlue)
               
-              ForEach(times.indices, id: \.self) { i in
-                HStack {
-                  ForEach(times[i], id: \.self) { time in
-                    AvailableTime(time: time)
-                  }
+              LazyVGrid(columns: [
+                GridItem(.adaptive(minimum: 40)),
+                GridItem(.adaptive(minimum: 40)),
+                GridItem(.adaptive(minimum: 40)),
+                GridItem(.adaptive(minimum: 40))
+              ]) {
+                ForEach(times) { time in
+                  AvailableTime(time: time)
                 }
               }
             }
@@ -55,17 +76,8 @@ struct ScheduleView: View {
                 .foregroundStyle(.skinFirtsBlue)
               
               HStack {
-                Text("Yourself")
-                  .padding(.all, 4)
-                  .overlay {
-                    RoundedRectangle(cornerRadius: 15)
-                      .stroke(.gray, lineWidth: 2)
-                  }
-                
-                Text("Another Person")
-                  .foregroundStyle(.white)
-                  .padding(.all, 4)
-                  .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 15))
+                PateintView(text: "Yourself")
+                PateintView(text: "Another Person")
               }
               
               VStack(alignment: .leading) {
@@ -90,27 +102,9 @@ struct ScheduleView: View {
                   .fontweight(300)
                 
                 HStack {
-                  Text("Male")
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 10)
-                    .overlay {
-                      RoundedRectangle(cornerRadius: 15)
-                        .stroke(.gray, lineWidth: 2)
-                    }
-                  Text("Female")
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 10)
-                    .overlay {
-                      RoundedRectangle(cornerRadius: 15)
-                        .stroke(.gray, lineWidth: 2)
-                    }
-                  Text("Other")
-                    .padding(.vertical, 4)
-                    .padding(.horizontal, 9)
-                    .overlay {
-                      RoundedRectangle(cornerRadius: 15)
-                        .stroke(.gray, lineWidth: 2)
-                    }
+                  GenderView(text: "Male")
+                  GenderView(text: "Female")
+                  GenderView(text: "Other")
                 }
               }
             }
@@ -137,17 +131,63 @@ struct ScheduleView: View {
           }
           .padding(.horizontal)
         }
+        .onAppear(perform: {
+          weekDaysSlider = currentDate.getWeekDays()
+          let nextMonth = currentDate.nextMonth
+          
+          print(nextMonth.getWeekDays())
+      })
       }
-      .padding()
     }
   }
   
-  func AvailableTime(time: String) -> some View {
-    Text(time)
+  func WeekDaysView(day: Date.WeekDay) -> some View {
+    VStack {
+      Text(day.date.format("dd"))
+      Text(day.date.format("E"))
+    }
+    .frame(width: 40.75, height: 60.58)
+    .foregroundStyle(isSameDate(date1: day.date, date2: currentDate) ? .white : .black)
+    .background(content: {
+      if day.date.isToday {
+        RoundedRectangle(cornerRadius: 20)
+          .fill(Color.skinFirtsBlue)
+      }
+    })
+    .background(Color.white, in: .rect(cornerRadius: 20))
+  }
+  
+  func AvailableTime(time: Time) -> some View {
+    Text(time.time)
       .textCase(.uppercase)
-      .foregroundStyle(.white)
+      .foregroundStyle(time.available ? .white : Color.fieldText)
       .frame(width: 75, height: 35)
-      .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 25))
+      .background(time.available ?  Color.skinFirtsGrayBlue : Color.fieldText2, in: .rect(cornerRadius: 25))
+  }
+  
+  func PateintView(text: String) -> some View {
+    Text(text)
+      .foregroundStyle(text.lowercased()==pateint ? .white : .black)
+      .padding(.all, 4)
+      .background(content: {
+        if text.lowercased() == pateint {
+          RoundedRectangle(cornerRadius: 15)
+            .fill(.skinFirtsBlue)
+            .matchedGeometryEffect(id: "PATEINT", in: pateintEffect)
+        }
+      })
+//      .background(.white.shadow(.drop(radius: 3)), in: .rect(cornerRadius: 15))
+      .overlay {
+        if text.lowercased() != pateint {
+          RoundedRectangle(cornerRadius: 15)
+            .stroke(.gray, lineWidth: 2)
+        }
+      }
+      .onTapGesture(perform: {
+        withAnimation(.snappy) {
+          pateint = text.lowercased()
+        }
+      })
   }
   
   func TextInputField(value: Binding<String>) -> some View {
@@ -155,6 +195,37 @@ struct ScheduleView: View {
       .padding()
       .background(Color.fieldText2, in: .rect(cornerRadius: 10))
   }
+  
+  func GenderView(text: String) -> some View {
+    Text(text)
+      .foregroundStyle(gender==text.lowercased() ? .white : .black)
+      .padding(.vertical, 4)
+      .padding(.horizontal, 10)
+      .background(content: {
+        if text.lowercased() == gender {
+          RoundedRectangle(cornerRadius: 15)
+            .fill(.skinFirtsBlue)
+            .matchedGeometryEffect(id: "GENDER", in: genderEffect)
+        }
+      })
+      .overlay {
+        if text.lowercased() != gender {
+          RoundedRectangle(cornerRadius: 15)
+            .stroke(.gray, lineWidth: 2)
+        }
+      }
+      .onTapGesture(perform: {
+        withAnimation(.snappy) {
+          gender = text.lowercased()
+        }
+      })
+  }
+}
+
+struct Time: Identifiable {
+  var id = UUID()
+  var time: String = ""
+  var available: Bool = false
 }
 
 #Preview {
