@@ -72,9 +72,9 @@ extension Date {
     return formatter.string(from: self)
   }
   
-  func getWeekDays() -> [WeekDay] {
+  func getWeekDays(date: Date = .init()) -> [WeekDay] {
     let calendar = Calendar.current
-    let startOfDay = calendar.startOfDay(for: self)
+    let startOfDay = calendar.startOfDay(for: date)
     let weekDay = calendar.dateInterval(of: .weekOfMonth, for: startOfDay)
     var weeks = [WeekDay]()
     
@@ -95,7 +95,7 @@ extension Date {
     
     guard let nextDate = calendar.date(byAdding: .day, value: 1, to: startOfLastDate) else { return [] }
     
-    return nextDate.getWeekDays()
+    return getWeekDays(date: nextDate)
   }
   
   func getPrevWeekDays() -> [WeekDay] {
@@ -104,7 +104,7 @@ extension Date {
     
     guard let prevDate = calendar.date(byAdding: .day, value: -1, to: startOfFirstDate) else { return [] }
     
-    return prevDate.getWeekDays()
+    return getWeekDays(date: prevDate)
   }
   
   struct WeekDay: Identifiable {

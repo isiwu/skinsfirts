@@ -26,17 +26,28 @@ struct ScheduleView: View {
       ScrollView {
         VStack {
           VStack {
-            Text("Month")
+            Text("\(currentDate.format("MMM")), \(currentDate.format("yyyy"))")
             HStack {
               Image(systemName: "lessthan")
                 .font(.system(size: 20))
+                .onTapGesture(perform: {
+                  let prevWeek = weekDaysSlider.first
+                  
+                  if let date = prevWeek?.date {
+                    weekDaysSlider = date.getPrevWeekDays()
+                  }
+                })
               ForEach(weekDaysSlider.indices, id: \.self) { index in
                 WeekDaysView(day: weekDaysSlider[index])
               }
               Image(systemName: "greaterthan")
                 .font(.system(size: 20))
                 .onTapGesture(perform: {
-                 
+                  let nextWeek = weekDaysSlider.last
+                  
+                  if let date = nextWeek?.date {
+                    weekDaysSlider = date.getNextWeekDays()
+                  }
                 })
             }
           }
@@ -133,9 +144,6 @@ struct ScheduleView: View {
         }
         .onAppear(perform: {
           weekDaysSlider = currentDate.getWeekDays()
-          let nextMonth = currentDate.nextMonth
-          
-          print(nextMonth.getWeekDays())
       })
       }
     }
