@@ -19,6 +19,10 @@
 		1438595B2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1438595A2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift */; };
 		1438595D2E0AA9B400AD8AC1 /* HorizontalLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1438595C2E0AA9B400AD8AC1 /* HorizontalLineView.swift */; };
 		144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144FCF372DFB45B600D66D07 /* SampleData.swift */; };
+		145B1DBA2E0AFEA5003A7B2B /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */; };
+		145B1DBC2E0AFEEA003A7B2B /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DBB2E0AFEEA003A7B2B /* RadioButtonView.swift */; };
+		145B1DBE2E0B22F2003A7B2B /* PaymentMethodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */; };
+		145B1DC02E0B2771003A7B2B /* PaymentMethodReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DBF2E0B2771003A7B2B /* PaymentMethodReviewView.swift */; };
 		1466C08C2DF82ED900B10EC0 /* SortByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C08B2DF82ED900B10EC0 /* SortByView.swift */; };
 		1466C0922DF848E400B10EC0 /* DoctorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */; };
 		1466C0942DF8560500B10EC0 /* RatingBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466C0932DF8560500B10EC0 /* RatingBadgeView.swift */; };
@@ -75,6 +79,10 @@
 		1438595A2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorWithAppointmentView.swift; sourceTree = "<group>"; };
 		1438595C2E0AA9B400AD8AC1 /* HorizontalLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLineView.swift; sourceTree = "<group>"; };
 		144FCF372DFB45B600D66D07 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
+		145B1DBB2E0AFEEA003A7B2B /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCardView.swift; sourceTree = "<group>"; };
+		145B1DBF2E0B2771003A7B2B /* PaymentMethodReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodReviewView.swift; sourceTree = "<group>"; };
 		1466C08B2DF82ED900B10EC0 /* SortByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByView.swift; sourceTree = "<group>"; };
 		1466C0912DF848E400B10EC0 /* DoctorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInfoView.swift; sourceTree = "<group>"; };
 		1466C0932DF8560500B10EC0 /* RatingBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingBadgeView.swift; sourceTree = "<group>"; };
@@ -186,6 +194,9 @@
 				147273DB2E055F7900A9EC10 /* DoctorAppointmentProfileView.swift */,
 				147273DD2E059DD400A9EC10 /* ScheduleView.swift */,
 				143859582E0AA54E00AD8AC1 /* ScheduleDetailView.swift */,
+				145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */,
+				145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */,
+				145B1DBF2E0B2771003A7B2B /* PaymentMethodReviewView.swift */,
 				1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */,
 				142716BD2E0087B100D36AD4 /* NotificationView.swift */,
 				14B6EA742E0191FB00804B9C /* MessageView.swift */,
@@ -235,6 +246,7 @@
 				149C36E52DF5D41E0098947C /* NumberFieldView.swift */,
 				1438595A2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift */,
 				149C36E12DF5BBE20098947C /* PasswordFieldView.swift */,
+				145B1DBB2E0AFEEA003A7B2B /* RadioButtonView.swift */,
 				1466C08B2DF82ED900B10EC0 /* SortByView.swift */,
 				142C905F2DFF419A007FB15B /* NotificationSettingView.swift */,
 				1438595C2E0AA9B400AD8AC1 /* HorizontalLineView.swift */,
@@ -351,6 +363,7 @@
 				142716BA2E00318100D36AD4 /* Faq.swift in Sources */,
 				143859592E0AA54E00AD8AC1 /* ScheduleDetailView.swift in Sources */,
 				1471A2C62DFC6BAF0086BBC3 /* ProfilePasswordManagerView.swift in Sources */,
+				145B1DBA2E0AFEA5003A7B2B /* PaymentMethodView.swift in Sources */,
 				1471A2C22DFC6B430086BBC3 /* ProfileSettingView.swift in Sources */,
 				144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */,
 				1438595D2E0AA9B400AD8AC1 /* HorizontalLineView.swift in Sources */,
@@ -373,9 +386,12 @@
 				149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */,
 				1466C09A2DF8749D00B10EC0 /* DoctorsFavoriteView.swift in Sources */,
 				147273DE2E059DD400A9EC10 /* ScheduleView.swift in Sources */,
+				145B1DBE2E0B22F2003A7B2B /* PaymentMethodCardView.swift in Sources */,
 				147273DC2E055F7900A9EC10 /* DoctorAppointmentProfileView.swift in Sources */,
 				149C36DB2DF5B08D0098947C /* LoginView.swift in Sources */,
+				145B1DC02E0B2771003A7B2B /* PaymentMethodReviewView.swift in Sources */,
 				147273DA2E052BE200A9EC10 /* SignupViewModel.swift in Sources */,
+				145B1DBC2E0AFEEA003A7B2B /* RadioButtonView.swift in Sources */,
 				149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */,
 				142C905C2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift in Sources */,
 				1438595B2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift in Sources */,
