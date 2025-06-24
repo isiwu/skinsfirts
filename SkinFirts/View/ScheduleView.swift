@@ -12,15 +12,16 @@ struct ScheduleView: View {
   @State private var age = ""
   @State private var editor = ""
   @State private var gender = "male"
-  var times = [Time(time: "9:00AM"), Time(time: "9:30AM"), Time(time: "10:00AM"), Time(time: "10:30AM"), Time(time: "11: 00AM"), Time(time: "11: 30AM"), Time(time: "12:00PM"), Time(time: "12:30PM"), Time(time: "1:00PM"), Time(time: "1:30PM"), Time(time: "2:00PM"), Time(time: "2:30PM"), Time(time: "3:00PM"), Time(time: "3:30PM"), Time(time: "4:00PM")
+  var times = [Time(time: "9:00AM"), Time(time: "9:30AM"), Time(time: "10:00AM", available: true), Time(time: "10:30AM"), Time(time: "11: 00AM"), Time(time: "11: 30AM", available: true), Time(time: "12:00PM"), Time(time: "12:30PM"), Time(time: "1:00PM", available: true), Time(time: "1:30PM", available: true), Time(time: "2:00PM"), Time(time: "2:30PM", available:  true), Time(time: "3:00PM", available: true), Time(time: "3:30PM"), Time(time: "4:00PM")
   ]
   @State private var pateint = "another person"
   @State private var currentDate = Date()
   @State private var weekDaysSlider: [Date.WeekDay] = []
-  @State private var currentWeekIndex = 1
+  @State private var currentTime = Time(time: "10:00AM", available: true)
   @State private var currentWeek = false
   @Namespace private var pateintEffect
   @Namespace private var genderEffect
+  @Environment(\.dismiss) var dismiss
   var body: some View {
     NavigationStack {
       ScrollView {
@@ -76,9 +77,7 @@ struct ScheduleView: View {
             }
             .padding(.horizontal)
             
-            Rectangle()
-              .fill(Color.skinFirtsBlue)
-              .frame(height: 2)
+            HorizontalLineView()
             
             VStack(alignment: .leading) {
               Text("Pateint Details")
@@ -120,9 +119,7 @@ struct ScheduleView: View {
               }
             }
             
-            Rectangle()
-              .fill(Color.skinFirtsBlue)
-              .frame(height: 2)
+            HorizontalLineView()
             
             VStack(alignment: .leading) {
               Text("Describe your problem")
@@ -144,8 +141,73 @@ struct ScheduleView: View {
         }
         .onAppear(perform: {
           weekDaysSlider = currentDate.getWeekDays()
-      })
+        })
       }
+      .toolbar(content: {
+        ToolbarItem(placement: .topBarLeading) {
+          Image("arrowback")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 25, height: 25)
+            .overlay(content: {
+              Circle()
+                .frame(width: 40, height: 40)
+                .background()
+                .blendMode(.destinationOver)
+                .onTapGesture(perform: {
+                  dismiss()
+                })
+            })
+        }
+        
+        ToolbarItem(placement: .topBarTrailing) {
+          HStack(spacing: 4) {
+            Text("Dr. Olivia Turner, M.D.")
+            .padding(.vertical, 4)
+            .padding(.horizontal, 9)
+            .foregroundStyle(.white)
+            .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
+            
+            Image("phone-white")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+              .frame(width: 20, height: 20)
+              .padding(.all, 4)
+              .background(Color.skinFirtsBlue, in: .circle)
+            
+            Image("video-white")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+              .frame(width: 20, height: 20)
+              .padding(.all, 4)
+              .background(Color.skinFirtsBlue, in: .circle)
+            
+            Image("chat-white")
+              .resizable()
+              .aspectRatio(contentMode: .fit)
+              .frame(width: 20, height: 20)
+              .padding(.all, 4)
+              .background(Color.skinFirtsBlue, in: .circle)
+            
+//            HStack(spacing: 2) {
+//              Image(systemName: "questionmark")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 15, height: 15)
+//                .padding(.all, 8)
+//                .background(Color.skinFirtsGrayBlue, in: .circle)
+//                
+//              Image(systemName: "heart.fill")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 15, height: 15)
+//                .padding(.all, 8)
+//                .background(Color.skinFirtsGrayBlue, in: .circle)
+//            }
+//            .foregroundStyle(.skinFirtsBlue)
+          }
+        }
+      })
     }
   }
   
@@ -168,9 +230,16 @@ struct ScheduleView: View {
   func AvailableTime(time: Time) -> some View {
     Text(time.time)
       .textCase(.uppercase)
-      .foregroundStyle(time.available ? .white : Color.fieldText)
+      .foregroundStyle(time.available ? time.time == currentTime.time ? .white : .black : Color.fieldText)
       .frame(width: 75, height: 35)
-      .background(time.available ?  Color.skinFirtsGrayBlue : Color.fieldText2, in: .rect(cornerRadius: 25))
+      .background(time.available ? time.time == currentTime.time ? Color.skinFirtsBlue : Color.skinFirtsGrayBlue : Color.fieldText2, in: .rect(cornerRadius: 25))
+      .onTapGesture(perform: {
+        if time.available {
+          withAnimation(.snappy) {
+            currentTime = time
+          }
+        }
+      })
   }
   
   func PateintView(text: String) -> some View {

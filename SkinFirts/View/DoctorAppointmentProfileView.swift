@@ -12,173 +12,183 @@ struct DoctorAppointmentProfileView: View {
   var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
   @State private var date = Date()
   @State private var calendar = [AvailableDate]()
+  @State private var first = 0
   @Environment(\.dismiss) var dismiss
   var body: some View {
     NavigationStack {
-      VStack {
+      ScrollView {
         VStack {
-          Profile()
-            .padding(.horizontal, 10)
-            .padding(.vertical, 20)
-            .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 15))
-          
-          VStack(alignment: .leading) {
-            Text("Profile")
-              .font(.title2)
-              .fontweight(500)
-              .foregroundStyle(.skinFirtsBlue)
+          VStack {
+            Profile()
+              .padding(.horizontal, 10)
+              .padding(.vertical, 20)
+              .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 15))
             
-            Text(doctor.profile)
-              .font(.footnote)
-              .fontweight(300)
-          }
-          .padding(.top)
-          .padding(.bottom)
-        }
-        .padding(.horizontal)
-        
-        VStack {
-          HStack {
-            Spacer()
-            
-            HStack {
-              Image(systemName: "lessthan")
-                .onTapGesture(perform: {
-                  getPrevMonth()
-                  getCalendar()
-                })
-              Text("\(date.format("MMM")), \(date.format("YYYY"))")
-                .textCase(.uppercase)
+            VStack(alignment: .leading) {
+              Text("Profile")
                 .font(.title2)
                 .fontweight(500)
-              Image(systemName: "greaterthan")
-                .onTapGesture(perform: {
-                  getNextMonth()
-                  getCalendar()
-                })
+                .foregroundStyle(.skinFirtsBlue)
+              
+              Text(doctor.profile)
+                .font(.footnote)
+                .fontweight(300)
             }
-            .foregroundStyle(.skinFirtsBlue)
-            
-            Spacer()
-          }
-          
-          HStack {
-            ForEach(weekdays.indices, id: \.self) { index in
-              Weekday(weekday: weekdays[index])
-            }
+            .padding(.top)
+            .padding(.bottom)
           }
           .padding(.horizontal)
           
-          LazyVGrid(columns: [
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80)),
-            GridItem(.adaptive(minimum: 80))
-          ], spacing: 16) {
-            ForEach(calendar.indices, id: \.self) { index in
-              if calendar[index].available {
-                NavigationLink(destination: ScheduleView()) {
+          VStack {
+            HStack {
+              Spacer()
+              
+              HStack {
+                Image(systemName: "lessthan")
+                  .onTapGesture(perform: {
+                    getPrevMonth()
+                    getCalendar()
+                  })
+                Text("\(date.format("MMM")), \(date.format("YYYY"))")
+                  .textCase(.uppercase)
+                  .font(.title2)
+                  .fontweight(500)
+                Image(systemName: "greaterthan")
+                  .onTapGesture(perform: {
+                    getNextMonth()
+                    getCalendar()
+                  })
+              }
+              .foregroundStyle(.skinFirtsBlue)
+              
+              Spacer()
+            }
+            
+            HStack {
+              ForEach(weekdays.indices, id: \.self) { index in
+                Weekday(weekday: weekdays[index])
+              }
+            }
+            .padding(.horizontal)
+            
+            LazyVGrid(columns: [
+              GridItem(.adaptive(minimum: 60)),
+              GridItem(.adaptive(minimum: 60)),
+              GridItem(.adaptive(minimum: 60)),
+              GridItem(.adaptive(minimum: 60)),
+              GridItem(.adaptive(minimum: 60)),
+              GridItem(.adaptive(minimum: 60)),
+              GridItem(.adaptive(minimum: 60))
+            ], spacing: 16) {
+              ForEach(calendar.indices, id: \.self) { index in
+                if calendar[index].available {
+                  NavigationLink(destination: ScheduleView()) {
+                    Text(calendar[index].date)
+                      .padding(.all, calendar[index].date == "24" ? 8 : 0)
+                      .foregroundStyle(calendar[index].date == "24" ? .white : .blue)
+                      .background(content: {
+                        if calendar[index].date == "24" {
+                          Circle()
+                            .fill(.skinFirtsBlue)
+                        }
+                      })
+                      .opacity(calendar[index].available ? 1 : 0.3)
+                  }
+                } else {
                   Text(calendar[index].date)
                     .opacity(calendar[index].available ? 1 : 0.3)
                 }
-              } else {
-                Text(calendar[index].date)
-                  .opacity(calendar[index].available ? 1 : 0.3)
               }
             }
+            .padding(.top, 25)
+            .background(Color.white, in: .rect(cornerRadius: 20))
           }
-          .padding(.top, 25)
-          .background(Color.white, in: .rect(cornerRadius: 20))
+          .padding(.top, 20)
+          .padding(.bottom, 25)
+          .background(Color.skinFirtsGrayBlue)
+          .onAppear(perform: {
+            getCalendar()
+          })
         }
-        .padding(.top, 20)
-        .padding(.horizontal)
-        .padding(.bottom)
-        .background(Color.skinFirtsGrayBlue)
-        .onAppear(perform: {
-          getCalendar()
+        .navigationBarBackButtonHidden(true)
+        .toolbar(content: {
+          ToolbarItem(placement: .topBarLeading) {
+            HStack {
+              HStack {
+                Image("arrowback")
+                  .overlay(content: {
+                    Circle()
+                      .frame(width: 40, height: 40)
+                      .background()
+                      .blendMode(.destinationOver)
+                      .onTapGesture(perform: {
+                        dismiss()
+                      })
+                  })
+                
+                HStack(spacing: 2) {
+                  HStack {
+                    Image("calendar2")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 15, height: 20)
+                    Text("Schedule")
+                      .font(.custom("LeagueSpartan", size: 16))
+                      .fontweight(300)
+                      .foregroundStyle(.white)
+                  }
+                  .padding(.vertical, 4)
+                  .padding(.horizontal, 6)
+                  .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
+                }
+                
+                Image("phone-white")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 20, height: 20)
+                  .padding(.all, 4)
+                  .background(Color.skinFirtsBlue, in: .circle)
+                
+                Image("video-white")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 20, height: 20)
+                  .padding(.all, 4)
+                  .background(Color.skinFirtsBlue, in: .circle)
+                
+                Image("chat-white")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 20, height: 20)
+                  .padding(.all, 4)
+                  .background(Color.skinFirtsBlue, in: .circle)
+              }
+              
+              Spacer()
+              
+            }
+          }
+          
+          ToolbarItem(placement: .topBarTrailing) {
+            HStack(spacing: 3) {
+              Image(systemName: "questionmark")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15, height: 15)
+                .padding(.all, 8)
+                .background(Color.skinFirtsGrayBlue, in: .circle)
+                
+              Image(systemName: "heart.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15, height: 15)
+                .padding(.all, 8)
+                .background(Color.skinFirtsGrayBlue, in: .circle)
+            }
+            .foregroundStyle(.skinFirtsBlue)
+          }
         })
       }
-      .navigationBarBackButtonHidden(true)
-      .toolbar(content: {
-        ToolbarItem(placement: .topBarLeading) {
-          HStack {
-            HStack {
-              Image("arrowback")
-                .overlay(content: {
-                  Circle()
-                    .frame(width: 40, height: 40)
-                    .background()
-                    .blendMode(.destinationOver)
-                    .onTapGesture(perform: {
-                      dismiss()
-                    })
-                })
-              
-              HStack(spacing: 2) {
-                HStack {
-                  Image("calendar2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 15, height: 20)
-                  Text("Schedule")
-                    .font(.custom("LeagueSpartan", size: 16))
-                    .fontweight(300)
-                    .foregroundStyle(.white)
-                }
-                .padding(.vertical, 4)
-                .padding(.horizontal, 6)
-                .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
-              }
-              
-              Image("phone-white")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
-                .padding(.all, 4)
-                .background(Color.skinFirtsBlue, in: .circle)
-              
-              Image("video-white")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
-                .padding(.all, 4)
-                .background(Color.skinFirtsBlue, in: .circle)
-              
-              Image("chat-white")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
-                .padding(.all, 4)
-                .background(Color.skinFirtsBlue, in: .circle)
-            }
-            
-            Spacer()
-            
-          }
-        }
-        
-        ToolbarItem(placement: .topBarTrailing) {
-          HStack(spacing: 3) {
-            Image(systemName: "questionmark")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 15, height: 15)
-              .padding(.all, 8)
-              .background(Color.skinFirtsGrayBlue, in: .circle)
-              
-            Image(systemName: "heart.fill")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 15, height: 15)
-              .padding(.all, 8)
-              .background(Color.skinFirtsGrayBlue, in: .circle)
-          }
-          .foregroundStyle(.skinFirtsBlue)
-        }
-      })
     }
   }
   
@@ -317,7 +327,7 @@ struct DoctorAppointmentProfileView: View {
 //        calendar.append(String((count - weekDayStart) + 1))
         let date = ((count - weekDayStart) + 1)
         var availableDate = AvailableDate()
-        if [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 26, 27, 28].contains(date) {
+        if [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 22, 23, 26, 27,].contains(date) {
           availableDate.date = String(date)
         } else {
           availableDate.date = String(date)

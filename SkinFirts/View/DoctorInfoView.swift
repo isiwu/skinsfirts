@@ -11,72 +11,75 @@ struct DoctorInfoView: View {
   var doctor: Doctor
   @Environment(\.dismiss) var dismiss
   var body: some View {
-    ScrollView {
-      VStack(spacing: 10) {
-        DoctorProfile()
-        .padding(.horizontal, 10)
-        .padding(.vertical, 20)
-        .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 15))
-        
-        VStack(spacing: 30) {
-          VStack(alignment: .leading) {
-            Text("Profile")
-              .font(.title2)
-              .fontweight(500)
-              .foregroundStyle(.skinFirtsBlue)
-            
-            Text(doctor.profile)
-              .font(.footnote)
-              .fontweight(300)
-          }
+    NavigationStack {
+      ScrollView {
+        VStack(spacing: 10) {
+          DoctorProfile()
+          .padding(.horizontal, 10)
+          .padding(.vertical, 20)
+          .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 15))
           
-          VStack(alignment: .leading) {
-            Text("Career Path")
-              .font(.title2)
-              .fontweight(500)
-              .foregroundStyle(.skinFirtsBlue)
+          VStack(spacing: 30) {
+            VStack(alignment: .leading) {
+              Text("Profile")
+                .font(.title2)
+                .fontweight(500)
+                .foregroundStyle(.skinFirtsBlue)
+              
+              Text(doctor.profile)
+                .font(.footnote)
+                .fontweight(300)
+            }
             
-            Text(doctor.careerPath)
-              .font(.footnote)
-              .fontweight(300)
-          }
-          
-          VStack(alignment: .leading) {
-            Text("Highlights")
-              .font(.title2)
-              .fontweight(500)
-              .foregroundStyle(.skinFirtsBlue)
+            VStack(alignment: .leading) {
+              Text("Career Path")
+                .font(.title2)
+                .fontweight(500)
+                .foregroundStyle(.skinFirtsBlue)
+              
+              Text(doctor.careerPath)
+                .font(.footnote)
+                .fontweight(300)
+            }
             
-            Text(doctor.highlight)
-              .font(.footnote)
-              .fontweight(300)
+            VStack(alignment: .leading) {
+              Text("Highlights")
+                .font(.title2)
+                .fontweight(500)
+                .foregroundStyle(.skinFirtsBlue)
+              
+              Text(doctor.highlight)
+                .font(.footnote)
+                .fontweight(300)
+            }
           }
+          .padding(.top, 20)
         }
-        .padding(.top, 20)
+        .padding(.horizontal)
+        .navigationBarBackButtonHidden(true)
+        .toolbar(content: {
+          ToolbarItem(placement: .topBarLeading) {
+            Image("arrowback")
+              .overlay(content: {
+                Circle()
+                  .frame(width: 40, height: 40)
+                  .background()
+                  .blendMode(.destinationOver)
+                  .onTapGesture(perform: {
+                    dismiss()
+                  })
+              })
+          }
+          
+          ToolbarItem(placement: .principal) {
+            Text("Doctor Info")
+              .foregroundStyle(.skinFirtsBlue)
+              .font(.title)
+              .fontweight(600)
+          }
+      })
+        .toolbarTitleDisplayMode(.inline)
       }
-      .padding(.horizontal)
-      .navigationBarBackButtonHidden(true)
-      .toolbar(content: {
-        ToolbarItem(placement: .topBarLeading) {
-          Image("arrowback")
-            .overlay(content: {
-              Circle()
-                .frame(width: 40, height: 40)
-                .background()
-                .blendMode(.destinationOver)
-                .onTapGesture(perform: {
-                  dismiss()
-                })
-            })
-        }
-        
-        ToolbarItem(placement: .principal) {
-          Text("Doctor Info")
-            .foregroundStyle(.skinFirtsBlue)
-            .font(.title)
-            .fontweight(600)
-        }
-    })
     }
   }
   
@@ -196,7 +199,5 @@ struct DoctorInfoView: View {
 }
 
 #Preview {
-  NavigationStack {
-    DoctorInfoView(doctor: sampleDoctors.first!)
-  }
+  DoctorInfoView(doctor: sampleDoctors.first!)
 }
