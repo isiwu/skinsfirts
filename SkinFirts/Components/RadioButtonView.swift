@@ -21,7 +21,6 @@ struct RadioButtonView: View {
         .font(.system(size: 30))
         .foregroundColor(Color.skinFirtsBlue)
     }
-//    .foregroundColor(Color.white)
   }
 }
 

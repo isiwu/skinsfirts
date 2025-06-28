@@ -64,6 +64,8 @@
 		149C36EA2DF5F2010098947C /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E92DF5F2010098947C /* DateExt.swift */; };
 		149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36EB2DF5F4CD0098947C /* HomeView.swift */; };
 		14AADD8C2E10067E004B516F /* PaymentSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD8B2E10067E004B516F /* PaymentSuccessView.swift */; };
+		14AADD8E2E102779004B516F /* AllAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD8D2E102779004B516F /* AllAppointmentView.swift */; };
+		14AADD902E1052BF004B516F /* AppointmentCancelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD8F2E1052BF004B516F /* AppointmentCancelView.swift */; };
 		14B6EA752E0191FB00804B9C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6EA742E0191FB00804B9C /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		149C36E92DF5F2010098947C /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		149C36EB2DF5F4CD0098947C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		14AADD8B2E10067E004B516F /* PaymentSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessView.swift; sourceTree = "<group>"; };
+		14AADD8D2E102779004B516F /* AllAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppointmentView.swift; sourceTree = "<group>"; };
+		14AADD8F2E1052BF004B516F /* AppointmentCancelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCancelView.swift; sourceTree = "<group>"; };
 		14B6EA742E0191FB00804B9C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +203,8 @@
 				145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */,
 				145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */,
 				145B1DBF2E0B2771003A7B2B /* PaymentMethodReviewView.swift */,
+				14AADD8D2E102779004B516F /* AllAppointmentView.swift */,
+				14AADD8F2E1052BF004B516F /* AppointmentCancelView.swift */,
 				14AADD8B2E10067E004B516F /* PaymentSuccessView.swift */,
 				1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */,
 				142716BD2E0087B100D36AD4 /* NotificationView.swift */,
@@ -356,6 +362,7 @@
 				149C36E22DF5BBE20098947C /* PasswordFieldView.swift in Sources */,
 				149C36EA2DF5F2010098947C /* DateExt.swift in Sources */,
 				149C36E62DF5D41E0098947C /* NumberFieldView.swift in Sources */,
+				14AADD8E2E102779004B516F /* AllAppointmentView.swift in Sources */,
 				149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */,
 				147442692DF71D4E0072AB5C /* Doctor.swift in Sources */,
 				142716BE2E0087B100D36AD4 /* NotificationView.swift in Sources */,
@@ -398,6 +405,7 @@
 				145B1DBC2E0AFEEA003A7B2B /* RadioButtonView.swift in Sources */,
 				149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */,
 				142C905C2DFEEBC2007FB15B /* ProfileNotificationSettingViewModel.swift in Sources */,
+				14AADD902E1052BF004B516F /* AppointmentCancelView.swift in Sources */,
 				1438595B2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift in Sources */,
 				149C36DE2DF5B2520098947C /* ViewExt.swift in Sources */,
 				1466C0962DF8563C00B10EC0 /* MessagesBadgeView.swift in Sources */,
