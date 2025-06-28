@@ -75,6 +75,8 @@ struct ProfileSettingView: View {
       .listStyle(.plain)
       .padding(.horizontal, 0)
       .navigationBarBackButtonHidden(true)
+      .toolbarTitleDisplayMode(.inline)
+      .toolbarBackground(Color.white, for: .navigationBar)
       .shortNavigationContent("Settings", dismiss: dismiss)
     }
   }

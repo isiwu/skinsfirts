@@ -63,6 +63,7 @@
 		149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E72DF5E7D40098947C /* ResetPasswordView.swift */; };
 		149C36EA2DF5F2010098947C /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36E92DF5F2010098947C /* DateExt.swift */; };
 		149C36EC2DF5F4CD0098947C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149C36EB2DF5F4CD0098947C /* HomeView.swift */; };
+		14AADD8C2E10067E004B516F /* PaymentSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD8B2E10067E004B516F /* PaymentSuccessView.swift */; };
 		14B6EA752E0191FB00804B9C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6EA742E0191FB00804B9C /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		149C36E72DF5E7D40098947C /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		149C36E92DF5F2010098947C /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		149C36EB2DF5F4CD0098947C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		14AADD8B2E10067E004B516F /* PaymentSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessView.swift; sourceTree = "<group>"; };
 		14B6EA742E0191FB00804B9C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */,
 				145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */,
 				145B1DBF2E0B2771003A7B2B /* PaymentMethodReviewView.swift */,
+				14AADD8B2E10067E004B516F /* PaymentSuccessView.swift */,
 				1471A2BB2DFC385C0086BBC3 /* ProfileView.swift */,
 				142716BD2E0087B100D36AD4 /* NotificationView.swift */,
 				14B6EA742E0191FB00804B9C /* MessageView.swift */,
@@ -358,6 +361,7 @@
 				142716BE2E0087B100D36AD4 /* NotificationView.swift in Sources */,
 				1471A2CF2DFC90B40086BBC3 /* ProfileEditViewModel.swift in Sources */,
 				1471A2CC2DFC6C7F0086BBC3 /* ProfileCurrentView.swift in Sources */,
+				14AADD8C2E10067E004B516F /* PaymentSuccessView.swift in Sources */,
 				1466C0942DF8560500B10EC0 /* RatingBadgeView.swift in Sources */,
 				142C905E2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift in Sources */,
 				142716BA2E00318100D36AD4 /* Faq.swift in Sources */,
