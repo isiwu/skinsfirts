@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DoctorAppointmentProfileView: View {
+struct ScheduleDoctorProfileView: View {
   var doctor: Doctor
   var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
   @State private var date = Date()
@@ -82,7 +82,7 @@ struct DoctorAppointmentProfileView: View {
             ], spacing: 16) {
               ForEach(calendar.indices, id: \.self) { index in
                 if calendar[index].available {
-                  NavigationLink(destination: ScheduleView()) {
+                  NavigationLink(destination: ScheduleView(doctor: doctor)) {
                     Text(calendar[index].date)
                       .padding(.all, calendar[index].date == "24" ? 8 : 0)
                       .foregroundStyle(calendar[index].date == "24" ? .white : .blue)
@@ -361,5 +361,5 @@ struct AvailableDate {
 }
 
 #Preview {
-  DoctorAppointmentProfileView(doctor: sampleDoctors.first!)
+  ScheduleDoctorProfileView(doctor: sampleDoctors.first!)
 }

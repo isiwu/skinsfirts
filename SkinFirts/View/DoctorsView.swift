@@ -37,6 +37,7 @@ struct DoctorsView: View {
         .navigationBarBackButtonHidden(true)
         .navigationContent(currentSort.rawValue, dismiss: dismiss)
         .toolbarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.white, for: .navigationBar)
         .onChange(of: currentSort) {
           if currentSort == .male || currentSort == .female {
             doctors = modelDoctors.filter { $0.gender.rawValue == currentSort.rawValue.lowercased() }
@@ -82,11 +83,13 @@ struct DoctorsView: View {
           Spacer()
           
           HStack {
-            Image("doc-calendar")
-              .resizable()
-              .frame(width: 18, height: 18)
-              .padding(.all, 4)
-              .background(Color.white, in: .circle)
+            NavigationLink(destination: ScheduleDoctorProfileView(doctor: doctor)) {
+              Image("doc-calendar")
+                .resizable()
+                .frame(width: 18, height: 18)
+                .padding(.all, 4)
+                .background(Color.white, in: .circle)
+            }
             Image(systemName: "questionmark")
               .frame(width: 18, height: 18)
               .padding(.all, 4)

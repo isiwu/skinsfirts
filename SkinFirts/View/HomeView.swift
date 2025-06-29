@@ -165,10 +165,6 @@ struct HomeView: View {
     .background(.skinFirtsGrayBlue)
   }
   
-//  func DoctorWithAppointmentView(doctor: Doctor) -> some View {
-//    
-//  }
-  
   func DoctorsWithAppointmentView() -> some View {
     VStack {
       ForEach(doctors) { doctor in

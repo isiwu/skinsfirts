@@ -80,11 +80,13 @@ struct DoctorsRatingView: View {
           Spacer()
           
           HStack {
-            Image("doc-calendar")
-              .resizable()
-              .frame(width: 18, height: 18)
-              .padding(.all, 4)
-              .background(Color.white, in: .circle)
+            NavigationLink(destination: ScheduleDoctorProfileView(doctor: doctor)) {
+              Image("doc-calendar")
+                .resizable()
+                .frame(width: 18, height: 18)
+                .padding(.all, 4)
+                .background(Color.white, in: .circle)
+            }
             Image(systemName: "questionmark")
               .frame(width: 18, height: 18)
               .padding(.all, 4)

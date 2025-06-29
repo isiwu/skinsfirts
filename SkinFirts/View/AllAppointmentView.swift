@@ -23,8 +23,8 @@ struct AllAppointmentView: View {
           }
           
 //          Complete(doctor: doctors.first!)
-//          Upcoming(doctor: doctors.first!)
-          Cancelled(doctor: doctors.first!)
+          Upcoming(doctor: doctors.first!)
+//          Cancelled(doctor: doctors.first!)
         }
         .padding(.horizontal, 10)
         .navigationBarBackButtonHidden(true)
@@ -105,15 +105,15 @@ struct AllAppointmentView: View {
         .padding(.horizontal, 20)
         .background(Color.white, in: .capsule)
         
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+        NavigationLink(destination: AppointmentReviewView()) {
           Text("Add Review")
             .font(.title3)
             .fontweight(400)
+            .foregroundStyle(.white)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 20)
+            .background(Color.skinFirtsBlue, in: .capsule)
         }
-        .foregroundStyle(.white)
-        .padding(.vertical, 8)
-        .padding(.horizontal, 20)
-        .background(Color.skinFirtsBlue, in: .capsule)
       }
     }
     .padding(.horizontal, 30)
@@ -170,29 +170,35 @@ struct AllAppointmentView: View {
       }
       
       HStack(spacing: 15) {
-        Text("Details")
-          .font(.title2)
-          .fontweight(400)
-          .foregroundStyle(.white)
-          .padding(.vertical, 8)
-          .padding(.horizontal, 60)
-          .background(Color.skinFirtsBlue, in: .capsule)
+        NavigationLink(destination: ScheduleDetailView(doctor: doctor)) {
+          Text("Details")
+            .font(.title2)
+            .fontweight(400)
+            .foregroundStyle(.white)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 60)
+            .background(Color.skinFirtsBlue, in: .capsule)
+        }
         
-        Image(systemName: "checkmark")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 20)
-          .foregroundStyle(.skinFirtsBlue)
-          .padding(.all, 10)
-          .background(Color.white, in: .circle)
+        Spacer()
         
-        Image(systemName: "multiply")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 20)
-          .padding(.all, 10)
-          .foregroundStyle(.skinFirtsBlue)
-          .background(Color.white, in: .circle)
+//        Image(systemName: "checkmark")
+//          .resizable()
+//          .aspectRatio(contentMode: .fit)
+//          .frame(width: 20)
+//          .foregroundStyle(.skinFirtsBlue)
+//          .padding(.all, 10)
+//          .background(Color.white, in: .circle)
+        
+        NavigationLink(destination: AppointmentCancelView()) {
+          Image(systemName: "multiply")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20)
+            .padding(.all, 10)
+            .foregroundStyle(.skinFirtsBlue)
+            .background(Color.white, in: .circle)
+        }
       }
     }
     .padding(.horizontal)
@@ -220,13 +226,15 @@ struct AllAppointmentView: View {
         }
       }
       
-      Text("Add Review")
-        .font(.title)
-        .fontweight(400)
-        .foregroundStyle(.white)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity)
-        .background(Color.skinFirtsBlue, in: .capsule)
+      NavigationLink(destination: AppointmentReviewView()) {
+        Text("Add Review")
+          .font(.title)
+          .fontweight(400)
+          .foregroundStyle(.white)
+          .padding(.vertical, 8)
+          .frame(maxWidth: .infinity)
+          .background(Color.skinFirtsBlue, in: .capsule)
+      }
     }
     .padding(.horizontal)
     .padding(.vertical)

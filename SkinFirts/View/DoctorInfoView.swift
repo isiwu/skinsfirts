@@ -159,19 +159,21 @@ struct DoctorInfoView: View {
         }
         
         HStack {
-          HStack {
-            Image("calendar2")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 15, height: 20)
-            Text("Schedule")
-              .font(.custom("LeagueSpartan", size: 16))
-              .fontweight(300)
-              .foregroundStyle(.white)
+          NavigationLink(destination: ScheduleView(doctor: doctor)) {
+            HStack {
+              Image("calendar2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 15, height: 20)
+              Text("Schedule")
+                .font(.custom("LeagueSpartan", size: 16))
+                .fontweight(300)
+                .foregroundStyle(.white)
+            }
+            .padding(.vertical, 4)
+            .padding(.horizontal, 6)
+            .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
           }
-          .padding(.vertical, 4)
-          .padding(.horizontal, 6)
-          .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
           
           Spacer()
           

@@ -103,19 +103,19 @@ struct DoctorsFavoriteView: View {
         .padding()
         .background(Color.white, in: .rect(cornerRadius: 25))
         
-        Button(action: {
+        NavigationLink(destination: ScheduleDoctorProfileView(doctor: doctor)) {
+          VStack {
+            Text("Make Appointment")
+              .foregroundStyle(.white)
+              .font(.custom("LeagueSpartan", size: 15))
+              .fontweight(300)
+              .frame(maxWidth: .infinity)
+              .padding(.vertical, 6)
+              .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 30))
+          }
+          .padding(.top, 8)
           
-        }) {
-          Text("Make Appointment")
-            .foregroundStyle(.white)
-//            .font(.body)
-            .font(.custom("LeagueSpartan", size: 15))
-            .fontweight(300)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 6)
-            .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 30))
         }
-        .padding(.top, 8)
       }
     }
     .padding()

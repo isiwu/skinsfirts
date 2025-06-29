@@ -22,6 +22,7 @@ struct ScheduleView: View {
   @Namespace private var pateintEffect
   @Namespace private var genderEffect
   @Environment(\.dismiss) var dismiss
+  var doctor: Doctor
   var body: some View {
     NavigationStack {
       ScrollView {
@@ -121,20 +122,32 @@ struct ScheduleView: View {
             
             HorizontalLineView()
             
-            VStack(alignment: .leading) {
-              Text("Describe your problem")
+            VStack(alignment: .leading, spacing: 50) {
+              VStack {
+                Text("Describe your problem")
+                
+                TextEditor(text: $editor)
+                  .frame(maxWidth: .infinity)
+                  .frame(height: 100)
+                  .foregroundStyle(.white)
+                  .padding(.vertical, 10)
+                  .padding(.horizontal, 20)
+                  .overlay(content: {
+                    RoundedRectangle(cornerRadius: 6)
+                      .stroke(.skinFirtsGrayBlue, lineWidth: 2)
+                  })
+                  .scrollContentBackground(.hidden)
+              }
               
-              TextEditor(text: $editor)
-                .frame(maxWidth: .infinity)
-                .frame(height: 100)
-                .foregroundStyle(.white)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 20)
-                .overlay(content: {
-                  RoundedRectangle(cornerRadius: 6)
-                    .stroke(.skinFirtsGrayBlue, lineWidth: 2)
-                })
-                .scrollContentBackground(.hidden)
+              NavigationLink(destination: ScheduleDetailView(doctor: doctor)) {
+                Text("Continue")
+                  .font(.title)
+                  .fontweight(600)
+                  .foregroundStyle(.white)
+                  .padding(.vertical)
+                  .frame(maxWidth: .infinity)
+                  .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 30))
+              }
             }
           }
           .padding(.horizontal)
@@ -142,72 +155,73 @@ struct ScheduleView: View {
         .onAppear(perform: {
           weekDaysSlider = currentDate.getWeekDays()
         })
-      }
-      .toolbar(content: {
-        ToolbarItem(placement: .topBarLeading) {
-          Image("arrowback")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 25, height: 25)
-            .overlay(content: {
-              Circle()
-                .frame(width: 40, height: 40)
-                .background()
-                .blendMode(.destinationOver)
-                .onTapGesture(perform: {
-                  dismiss()
-                })
-            })
-        }
-        
-        ToolbarItem(placement: .topBarTrailing) {
-          HStack(spacing: 4) {
-            Text("Dr. Olivia Turner, M.D.")
-            .padding(.vertical, 4)
-            .padding(.horizontal, 9)
-            .foregroundStyle(.white)
-            .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
-            
-            Image("phone-white")
+        .navigationBarBackButtonHidden(true)
+        .toolbar(content: {
+          ToolbarItem(placement: .topBarLeading) {
+            Image("arrowback")
               .resizable()
               .aspectRatio(contentMode: .fit)
-              .frame(width: 20, height: 20)
-              .padding(.all, 4)
-              .background(Color.skinFirtsBlue, in: .circle)
-            
-            Image("video-white")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 20, height: 20)
-              .padding(.all, 4)
-              .background(Color.skinFirtsBlue, in: .circle)
-            
-            Image("chat-white")
-              .resizable()
-              .aspectRatio(contentMode: .fit)
-              .frame(width: 20, height: 20)
-              .padding(.all, 4)
-              .background(Color.skinFirtsBlue, in: .circle)
-            
-//            HStack(spacing: 2) {
-//              Image(systemName: "questionmark")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 15, height: 15)
-//                .padding(.all, 8)
-//                .background(Color.skinFirtsGrayBlue, in: .circle)
-//                
-//              Image(systemName: "heart.fill")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 15, height: 15)
-//                .padding(.all, 8)
-//                .background(Color.skinFirtsGrayBlue, in: .circle)
-//            }
-//            .foregroundStyle(.skinFirtsBlue)
+              .frame(width: 25, height: 25)
+              .overlay(content: {
+                Circle()
+                  .frame(width: 40, height: 40)
+                  .background()
+                  .blendMode(.destinationOver)
+                  .onTapGesture(perform: {
+                    dismiss()
+                  })
+              })
           }
-        }
-      })
+          
+          ToolbarItem(placement: .topBarTrailing) {
+            HStack(spacing: 4) {
+              Text(doctor.name)
+              .padding(.vertical, 4)
+              .padding(.horizontal, 9)
+              .foregroundStyle(.white)
+              .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
+              
+              Image("phone-white")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .padding(.all, 4)
+                .background(Color.skinFirtsBlue, in: .circle)
+              
+              Image("video-white")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .padding(.all, 4)
+                .background(Color.skinFirtsBlue, in: .circle)
+              
+              Image("chat-white")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .padding(.all, 4)
+                .background(Color.skinFirtsBlue, in: .circle)
+              
+  //            HStack(spacing: 2) {
+  //              Image(systemName: "questionmark")
+  //                .resizable()
+  //                .aspectRatio(contentMode: .fit)
+  //                .frame(width: 15, height: 15)
+  //                .padding(.all, 8)
+  //                .background(Color.skinFirtsGrayBlue, in: .circle)
+  //
+  //              Image(systemName: "heart.fill")
+  //                .resizable()
+  //                .aspectRatio(contentMode: .fit)
+  //                .frame(width: 15, height: 15)
+  //                .padding(.all, 8)
+  //                .background(Color.skinFirtsGrayBlue, in: .circle)
+  //            }
+  //            .foregroundStyle(.skinFirtsBlue)
+            }
+          }
+        })
+      }
     }
   }
   
@@ -306,5 +320,5 @@ struct Time: Identifiable {
 }
 
 #Preview {
-    ScheduleView()
+  ScheduleView(doctor: sampleDoctors.first!)
 }
