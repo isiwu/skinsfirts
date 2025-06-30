@@ -12,6 +12,7 @@ struct PaymentMethodCardView: View {
   @State private var cardNumber = "000 000 000 00"
   @State private var expiry = "04/28"
   @State private var cvv = "0000"
+  @State private var presentedPath = false
   @Environment(\.dismiss) var dismiss
   var body: some View {
     NavigationStack {
@@ -33,9 +34,16 @@ struct PaymentMethodCardView: View {
           .padding(.vertical, 10)
           .frame(maxWidth: .infinity)
           .background(Color.skinFirtsBlue, in: .capsule)
+          .onTapGesture(perform: {
+            presentedPath = true
+          })
+      }
+      .navigationDestination(isPresented: $presentedPath) {
+        PaymentMethodReviewView()
       }
       .padding(.horizontal)
       .vspacing(.top)
+      .navigationBarBackButtonHidden(true)
       .toolbarBackground(Color.white, for: .navigationBar)
       .shortNavigationContent("Add Card", dismiss: dismiss)
     }

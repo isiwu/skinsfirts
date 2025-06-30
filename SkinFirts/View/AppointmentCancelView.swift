@@ -37,6 +37,9 @@ struct AppointmentCancelView: View {
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(reason.rescheduling ? Color.skinFirtsGrayBlue : Color.white, in: .capsule)
+            .onTapGesture(perform: {
+              reason.rescheduling.toggle()
+            })
             
             HStack(spacing: 15) {
               RadioButtonView(checked: $reason.weatherConditions)
@@ -54,6 +57,9 @@ struct AppointmentCancelView: View {
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(reason.weatherConditions ? Color.skinFirtsGrayBlue : Color.white, in: .capsule)
+            .onTapGesture(perform: {
+              reason.weatherConditions.toggle()
+            })
             
             HStack(spacing: 15) {
               RadioButtonView(checked: $reason.unexpectedWork)
@@ -71,6 +77,9 @@ struct AppointmentCancelView: View {
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(reason.unexpectedWork ? Color.skinFirtsGrayBlue : Color.white, in: .capsule)
+            .onTapGesture(perform: {
+              reason.unexpectedWork.toggle()
+            })
             
             HStack(spacing: 15) {
               RadioButtonView(checked: $reason.others)
@@ -88,6 +97,9 @@ struct AppointmentCancelView: View {
             .padding(.vertical, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(reason.others ? Color.skinFirtsGrayBlue : Color.white, in: .capsule)
+            .onTapGesture(perform: {
+              reason.others.toggle()
+            })
           }
           .onChange(of: reason.others) {
             if reason.others {
