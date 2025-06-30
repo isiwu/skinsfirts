@@ -19,6 +19,8 @@
 		1438595B2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1438595A2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift */; };
 		1438595D2E0AA9B400AD8AC1 /* HorizontalLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1438595C2E0AA9B400AD8AC1 /* HorizontalLineView.swift */; };
 		144FCF382DFB45B600D66D07 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144FCF372DFB45B600D66D07 /* SampleData.swift */; };
+		1459DF402E12A0D400FCBE14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459DF3F2E12A0D400FCBE14 /* MainView.swift */; };
+		1459DF422E12B7E000FCBE14 /* UserDefaultExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459DF412E12B7E000FCBE14 /* UserDefaultExt.swift */; };
 		145B1DBA2E0AFEA5003A7B2B /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */; };
 		145B1DBC2E0AFEEA003A7B2B /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DBB2E0AFEEA003A7B2B /* RadioButtonView.swift */; };
 		145B1DBE2E0B22F2003A7B2B /* PaymentMethodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */; };
@@ -84,6 +86,8 @@
 		1438595A2E0AA6E800AD8AC1 /* DoctorWithAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorWithAppointmentView.swift; sourceTree = "<group>"; };
 		1438595C2E0AA9B400AD8AC1 /* HorizontalLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLineView.swift; sourceTree = "<group>"; };
 		144FCF372DFB45B600D66D07 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		1459DF3F2E12A0D400FCBE14 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1459DF412E12B7E000FCBE14 /* UserDefaultExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExt.swift; sourceTree = "<group>"; };
 		145B1DB92E0AFEA5003A7B2B /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
 		145B1DBB2E0AFEEA003A7B2B /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		145B1DBD2E0B22F2003A7B2B /* PaymentMethodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCardView.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				146B48F62DE0E2250037167C /* ContentView.swift */,
 				146B490C2DE0EF140037167C /* WelcomeView.swift */,
 				149C36DA2DF5B08D0098947C /* LoginView.swift */,
+				1459DF3F2E12A0D400FCBE14 /* MainView.swift */,
 				149C36E32DF5CDC70098947C /* SignupView.swift */,
 				149C36EB2DF5F4CD0098947C /* HomeView.swift */,
 				1474426A2DF728D70072AB5C /* DoctorsView.swift */,
@@ -287,6 +292,7 @@
 			children = (
 				149C36DD2DF5B2520098947C /* ViewExt.swift */,
 				149C36E92DF5F2010098947C /* DateExt.swift */,
+				1459DF412E12B7E000FCBE14 /* UserDefaultExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,10 +377,12 @@
 				14AADD8E2E102779004B516F /* AllAppointmentView.swift in Sources */,
 				149C36E82DF5E7D40098947C /* ResetPasswordView.swift in Sources */,
 				147442692DF71D4E0072AB5C /* Doctor.swift in Sources */,
+				1459DF422E12B7E000FCBE14 /* UserDefaultExt.swift in Sources */,
 				142716BE2E0087B100D36AD4 /* NotificationView.swift in Sources */,
 				1471A2CF2DFC90B40086BBC3 /* ProfileEditViewModel.swift in Sources */,
 				1471A2CC2DFC6C7F0086BBC3 /* ProfileCurrentView.swift in Sources */,
 				14AADD8C2E10067E004B516F /* PaymentSuccessView.swift in Sources */,
+				1459DF402E12A0D400FCBE14 /* MainView.swift in Sources */,
 				1466C0942DF8560500B10EC0 /* RatingBadgeView.swift in Sources */,
 				142C905E2DFF0209007FB15B /* ProfilePasswordManagerViewModel.swift in Sources */,
 				142716BA2E00318100D36AD4 /* Faq.swift in Sources */,

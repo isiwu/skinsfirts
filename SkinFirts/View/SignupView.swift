@@ -109,6 +109,7 @@ struct SignupView: View {
           .fontWeight(.semibold)
       }
     })
+    .toolbarBackground(Color.white, for: .navigationBar)
   }
 }
 

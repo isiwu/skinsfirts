@@ -9,8 +9,11 @@ import SwiftUI
 
 struct BlueButton: View {
   var buttonText: String = "Log In"
+  var action: (() -> Void)?
   var body: some View {
-    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+    Button(action: {
+      self.action?()
+    }) {
       Text(buttonText)
         .padding(.vertical)
         .frame(maxWidth: .infinity)

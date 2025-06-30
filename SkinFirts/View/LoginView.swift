@@ -11,6 +11,7 @@ struct LoginView: View {
   @State private var email = ""
   @State private var password = ""
   @Environment(\.dismiss) var dismiss
+  @AppStorage(UserKey.login.rawValue) private var login = false
   var body: some View {
     NavigationStack {
       VStack(spacing: 50) {
@@ -41,10 +42,9 @@ struct LoginView: View {
             }
           }
         }
-//        .padding(.top, 20)
         
         VStack {
-          BlueButton(buttonText: "Log In")
+          BlueButton(buttonText: "Log In", action: loginAction)
             .frame(width: 207)
           
           Text("Or")
@@ -52,7 +52,6 @@ struct LoginView: View {
           
           Image("fingerprint")
             .resizable()
-//            .padding(.all, 8)
             .frame(width: 45, height: 45)
             .background(.skinFirtsGrayBlue, in: .circle)
           
@@ -85,7 +84,12 @@ struct LoginView: View {
         }
       })
       .toolbarTitleDisplayMode(.inline)
+      .toolbarBackground(Color.white, for: .navigationBar)
     }
+  }
+  
+  func loginAction() {
+    login = true
   }
 }
 

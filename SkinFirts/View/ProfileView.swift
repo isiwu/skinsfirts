@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+  @AppStorage(UserKey.login.rawValue) private var login = false
   @Environment(\.dismiss) var dismiss
   @State private var currentView: CurrentView = .profileEdit
   @State private var logout = false
@@ -152,10 +153,14 @@ struct ProfileView: View {
       HStack {
         GrayBlueButton(buttonText: "Cancel")
         
-        BlueButton(buttonText: "Yes, Logout")
+        BlueButton(buttonText: "Yes, Logout", action: logoutAction)
       }
     }
     .padding(.horizontal)
+  }
+  
+  func logoutAction() {
+    login = false
   }
 }
 
