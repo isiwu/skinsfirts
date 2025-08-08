@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WelcomeView: View {
+  var store = Store.data
+  
   var body: some View {
     NavigationStack {
       VStack {
@@ -53,8 +55,29 @@ struct WelcomeView: View {
           }
         }
       }
+      .task {
+        do {
+          try await getDoctors()
+        } catch {
+          print("Error due => \(error)")
+//          fatalError("Failed to fetch data")
+        }
+      }
     }
   }
+  
+  func getDoctors() async throws {
+    let url = URL(string: "http://localhost:3000/api/doctors")!
+    let (data, _) = try await URLSession.shared.data(from: url)
+    let wrapper = try JSONDecoder().decode(Wrapper.self, from: data)
+    
+    store.setDoctors(doctors: wrapper.data)
+  }
+}
+
+struct Wrapper: Codable {
+  let status: Bool
+  let data: [DoctorData]
 }
 
 #Preview {

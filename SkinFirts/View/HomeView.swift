@@ -11,6 +11,7 @@ import SwiftData
 struct HomeView: View {
   @State private var search = ""
   @Query var doctors: [Doctor]
+  var store = Store.data
   var body: some View {
     NavigationStack {
       ScrollView {
@@ -22,6 +23,9 @@ struct HomeView: View {
           DoctorsWithAppointmentView()
         }
       }
+      .onAppear(perform: {
+        print(store.getDoctors())
+      })
     }
   }
   

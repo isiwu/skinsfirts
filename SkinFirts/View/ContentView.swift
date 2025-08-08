@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-//  @AppStorage(UserKey.splash.rawValue) private var splash = false
   @AppStorage(UserKey.login.rawValue) private var login = false
   var body: some View {
-    if !login {
-      WelcomeView()
-    } else {
-      MainView()
+    VStack {
+      if !login {
+        WelcomeView()
+      } else {
+        MainView()
+      }
     }
+    .onAppear(perform: {
+      undoLogin()
+    })
+  }
+  
+  func undoLogin() {
+    login = false
   }
 }
 
