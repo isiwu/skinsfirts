@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DoctorInfoView: View {
-  var doctor: Doctor
+//  var doctor: Doctor
+  var doctor = DoctorData()
   @Environment(\.dismiss) var dismiss
   var body: some View {
     NavigationStack {
@@ -86,10 +87,11 @@ struct DoctorInfoView: View {
   private func DoctorProfile() -> some View {
     VStack(spacing: 20) {
       HStack {
-        Image(doctor.image)
-          .resizable()
+//        Image(doctor.image)
+//          .resizable()
+        RemoteImage(url: doctor.image)
           .aspectRatio(contentMode: .fit)
-          .frame(width: 150, height: .infinity)
+          .frame(width: 150)
         VStack {
           HStack() {
             Image("exp-badge")
@@ -100,7 +102,7 @@ struct DoctorInfoView: View {
               .background(Color.skinFirtsGrayBlue, in: .circle)
             
             VStack(alignment: .leading, spacing: -5) {
-              Text("\(doctor.experienceLevel) Year")
+              Text("\(doctor.experience) Year")
                 .font(.system(size: 16))
                 .fontweight(400)
               Text("experience")
@@ -138,25 +140,25 @@ struct DoctorInfoView: View {
       .background(Color.white, in: .rect(cornerRadius: 15))
       
       VStack(alignment: .leading) {
-        HStack(spacing: 6) {
-          HStack(spacing: 1) {
-            RatingBadgeView()
-            
-            MessagesBadgeView()
-          }
-          
-          HStack(spacing: 2) {
-            Image(systemName: "alarm")
-            
-            Text(doctor.availability)
-              .font(.footnote)
-              .fontweight(300)
-          }
-          .foregroundStyle(.skinFirtsBlue)
-          .padding(.vertical, 2)
-          .padding(.horizontal, 6)
-          .background(Color.white, in: .rect(cornerRadius: 20))
-        }
+//        HStack(spacing: 6) {
+//          HStack(spacing: 1) {
+//            RatingBadgeView()
+//            
+//            MessagesBadgeView()
+//          }
+//          
+//          HStack(spacing: 2) {
+//            Image(systemName: "alarm")
+//            
+////            Text(doctor.availability)
+////              .font(.footnote)
+////              .fontweight(300)
+//          }
+//          .foregroundStyle(.skinFirtsBlue)
+//          .padding(.vertical, 2)
+//          .padding(.horizontal, 6)
+//          .background(Color.white, in: .rect(cornerRadius: 20))
+//        }
         
         HStack {
           NavigationLink(destination: ScheduleView(doctor: doctor)) {
@@ -201,5 +203,6 @@ struct DoctorInfoView: View {
 }
 
 #Preview {
-  DoctorInfoView(doctor: sampleDoctors.first!)
+//  DoctorInfoView(doctor: sampleDoctors.first!)
+  DoctorInfoView()
 }

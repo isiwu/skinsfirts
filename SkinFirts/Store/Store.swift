@@ -12,6 +12,7 @@ class Store {
   static let data = Store()
   private var doctors = [DoctorData]()
   private init() { }  // Prevent creating multiple instances
+  
   func getDoctors() -> [DoctorData] {
     self.doctors
   }

@@ -22,7 +22,8 @@ struct ScheduleView: View {
   @Namespace private var pateintEffect
   @Namespace private var genderEffect
   @Environment(\.dismiss) var dismiss
-  var doctor: Doctor
+//  var doctor: Doctor
+  var doctor = DoctorData()
   var body: some View {
     NavigationStack {
       ScrollView {
@@ -320,5 +321,6 @@ struct Time: Identifiable {
 }
 
 #Preview {
-  ScheduleView(doctor: sampleDoctors.first!)
+  ScheduleView()
+//  ScheduleView(doctor: sampleDoctors.first!)
 }

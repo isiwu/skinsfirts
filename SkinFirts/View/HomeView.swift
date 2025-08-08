@@ -10,6 +10,7 @@ import SwiftData
 
 struct HomeView: View {
   @State private var search = ""
+  @State private var doctorsData = [DoctorData]()
   @Query var doctors: [Doctor]
   var store = Store.data
   var body: some View {
@@ -24,7 +25,7 @@ struct HomeView: View {
         }
       }
       .onAppear(perform: {
-        print(store.getDoctors())
+        self.doctorsData = store.getDoctors()
       })
     }
   }
@@ -62,7 +63,7 @@ struct HomeView: View {
       
       HStack {
         HStack {
-          NavigationLink(destination: DoctorsView(modelDoctors: doctors)) {
+          NavigationLink(destination: DoctorsView(modelDoctors: doctorsData)) {
             VStack {
               Image(systemName: "stethoscope")
               Text("Doctors")
@@ -171,7 +172,7 @@ struct HomeView: View {
   
   func DoctorsWithAppointmentView() -> some View {
     VStack {
-      ForEach(doctors) { doctor in
+      ForEach(doctorsData) { doctor in
         DoctorWithAppointmentView(doctor: doctor)
       }
     }

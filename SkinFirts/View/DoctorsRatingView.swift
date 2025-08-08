@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct DoctorsRatingView: View {
-  var doctors = [Doctor]()
+//  var doctors = [Doctor]()
+  var doctors = [DoctorData]()
   var body: some View {
     ForEach(doctors) { doctor in
       DoctorView(doctor: doctor)
     }
   }
   
-  func DoctorView(doctor: Doctor) -> some View {
+  func DoctorView(doctor: DoctorData) -> some View {
     HStack(spacing: 10) {
       Image(doctor.image)
         .resizable()
@@ -109,6 +110,7 @@ struct DoctorsRatingView: View {
 
 #Preview {
   NavigationStack {
-    DoctorsRatingView(doctors: sampleDoctors)
+    DoctorsRatingView()
+//    DoctorsRatingView(doctors: sampleDoctors)
   }
 }

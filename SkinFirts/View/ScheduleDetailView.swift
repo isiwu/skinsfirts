@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ScheduleDetailView: View {
-  var doctor: Doctor
+  var doctor = DoctorData()
+//  var doctor: Doctor
 //  @State private var path = [Int]()
   @Environment(\.dismiss) var dismiss
   var body: some View {
@@ -164,5 +165,6 @@ struct ScheduleDetailView: View {
 }
 
 #Preview {
-  ScheduleDetailView(doctor: sampleDoctors.first!)
+  ScheduleDetailView()
+//  ScheduleDetailView(doctor: sampleDoctors.first!)
 }

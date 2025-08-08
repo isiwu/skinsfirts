@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SortByView: View {
   @Binding var active: SortStatus
-  var doctors = [Doctor]()
+  var doctors = [DoctorData]()
+//  var doctors = [Doctor]()
   @Namespace private var sortBy
   var body: some View {
     HStack {

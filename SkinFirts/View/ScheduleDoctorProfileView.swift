@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ScheduleDoctorProfileView: View {
-  var doctor: Doctor
+  var doctor = DoctorData()
+//  var doctor: Doctor
   var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
   @State private var date = Date()
   @State private var calendar = [AvailableDate]()
@@ -127,19 +128,21 @@ struct ScheduleDoctorProfileView: View {
                   })
                 
                 HStack(spacing: 2) {
-                  HStack {
-                    Image("calendar2")
-                      .resizable()
-                      .aspectRatio(contentMode: .fit)
-                      .frame(width: 15, height: 20)
-                    Text("Schedule")
-                      .font(.custom("LeagueSpartan", size: 16))
-                      .fontweight(300)
-                      .foregroundStyle(.white)
+                  NavigationLink(destination: ScheduleView(doctor: doctor)) {
+                    HStack {
+                      Image("calendar2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 15, height: 20)
+                      Text("Schedule")
+                        .font(.custom("LeagueSpartan", size: 16))
+                        .fontweight(300)
+                        .foregroundStyle(.white)
+                    }
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 6)
+                    .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
                   }
-                  .padding(.vertical, 4)
-                  .padding(.horizontal, 6)
-                  .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
                 }
                 
                 Image("phone-white")
@@ -195,10 +198,11 @@ struct ScheduleDoctorProfileView: View {
   func Profile() -> some View {
     VStack(spacing: 20) {
       HStack {
-        Image(doctor.image)
-          .resizable()
+//        Image(doctor.image)
+//          .resizable()
+        RemoteImage(url: doctor.image)
           .aspectRatio(contentMode: .fit)
-          .frame(width: 150, height: .infinity)
+          .frame(width: 150)
         VStack {
           HStack() {
             Image("exp-badge")
@@ -209,7 +213,7 @@ struct ScheduleDoctorProfileView: View {
               .background(Color.skinFirtsGrayBlue, in: .circle)
             
             VStack(alignment: .leading, spacing: -5) {
-              Text("\(doctor.experienceLevel) Year")
+              Text("\(doctor.experience) Year")
                 .font(.system(size: 16))
                 .fontweight(400)
               Text("experience")
@@ -246,25 +250,25 @@ struct ScheduleDoctorProfileView: View {
       .background(Color.white, in: .rect(cornerRadius: 15))
       
       VStack(alignment: .leading) {
-        HStack(spacing: 6) {
-          HStack(spacing: 1) {
-            RatingBadgeView()
-            
-            MessagesBadgeView()
-          }
-          
-          HStack(spacing: 2) {
-            Image(systemName: "alarm")
-            
-            Text(doctor.availability)
-              .font(.footnote)
-              .fontweight(300)
-          }
-          .foregroundStyle(.skinFirtsBlue)
-          .padding(.vertical, 2)
-          .padding(.horizontal, 6)
-          .background(Color.white, in: .rect(cornerRadius: 20))
-        }
+//        HStack(spacing: 6) {
+//          HStack(spacing: 1) {
+//            RatingBadgeView()
+//            
+//            MessagesBadgeView()
+//          }
+//          
+//          HStack(spacing: 2) {
+//            Image(systemName: "alarm")
+//            
+////            Text(doctor.availability)
+////              .font(.footnote)
+////              .fontweight(300)
+//          }
+//          .foregroundStyle(.skinFirtsBlue)
+//          .padding(.vertical, 2)
+//          .padding(.horizontal, 6)
+//          .background(Color.white, in: .rect(cornerRadius: 20))
+//        }
         
 //        HStack {
 //          HStack {
@@ -361,5 +365,6 @@ struct AvailableDate {
 }
 
 #Preview {
-  ScheduleDoctorProfileView(doctor: sampleDoctors.first!)
+  ScheduleDoctorProfileView()
+//  ScheduleDoctorProfileView(doctor: sampleDoctors.first!)
 }

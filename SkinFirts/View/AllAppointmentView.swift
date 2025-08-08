@@ -11,7 +11,8 @@ struct AllAppointmentView: View {
   @Environment(\.dismiss) var dismiss
   @State private var currentFilter = "Complete"
   @Namespace var filter
-  var doctors = sampleDoctors
+//  var doctors = sampleDoctors
+  var doctors = [DoctorData]()
   var body: some View {
     NavigationStack {
       ScrollView {
@@ -58,7 +59,7 @@ struct AllAppointmentView: View {
     .background(Color.skinFirtsGrayBlue, in: .capsule)
   }
   
-  func Complete(doctor: Doctor) -> some View {
+  func Complete(doctor: DoctorData) -> some View {
     VStack(spacing: 15) {
       HStack {
         Image(doctor.image)
@@ -85,10 +86,10 @@ struct AllAppointmentView: View {
             .padding(.vertical, 4)
             .background(Color.white, in: .capsule)
             
-            Image(systemName: doctor.isFavorite ? "heart.fill" : "heart")
-              .padding(.all, 8)
-              .foregroundStyle(.skinFirtsBlue)
-              .background(Color.white, in: .circle)
+//            Image(systemName: doctor.isFavorite ? "heart.fill" : "heart")
+//              .padding(.all, 8)
+//              .foregroundStyle(.skinFirtsBlue)
+//              .background(Color.white, in: .circle)
           }
         }
         .padding(.top, 40)
@@ -122,7 +123,7 @@ struct AllAppointmentView: View {
     .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 20))
   }
   
-  func Upcoming(doctor: Doctor) -> some View {
+  func Upcoming(doctor: DoctorData) -> some View {
     VStack(alignment: .leading, spacing: 10) {
       HStack {
         Image(doctor.image)
@@ -207,7 +208,7 @@ struct AllAppointmentView: View {
     .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 20))
   }
   
-  func Cancelled(doctor: Doctor) -> some View {
+  func Cancelled(doctor: DoctorData) -> some View {
     VStack(alignment: .leading, spacing: 10) {
       HStack {
         Image(doctor.image)

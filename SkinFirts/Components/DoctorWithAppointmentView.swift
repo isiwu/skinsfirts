@@ -9,13 +9,17 @@ import SwiftUI
 import SwiftData
 
 struct DoctorWithAppointmentView: View {
-  var doctor: Doctor
+//  var doctor: Doctor
+  var doctor = DoctorData()
   var body: some View {
     HStack(alignment: .top, spacing: 15) {
-      Image(doctor.image)
-        .resizable()
+      RemoteImage(url: doctor.image)
         .frame(width: 90, height: 90)
         .clipShape(Circle())
+//      Image(doctor.image)
+//        .resizable()
+//        .frame(width: 90, height: 90)
+//        .clipShape(Circle())
       
       VStack(alignment: .leading) {
         VStack(alignment: .leading) {
@@ -50,17 +54,17 @@ struct DoctorWithAppointmentView: View {
               .padding(.all, 4)
               .background(Color.white, in: .circle)
               
-            if doctor.isFavorite {
-              Image(systemName: "heart.fill")
-                .frame(width: 18, height: 18)
-                .padding(.all, 4)
-                .background(Color.white, in: .circle)
-            } else {
-              Image(systemName: "heart")
-                .frame(width: 18, height: 18)
-                .padding(.all, 4)
-                .background(Color.white, in: .circle)
-            }
+//            if doctor.isFavorite {
+//              Image(systemName: "heart.fill")
+//                .frame(width: 18, height: 18)
+//                .padding(.all, 4)
+//                .background(Color.white, in: .circle)
+//            } else {
+//              Image(systemName: "heart")
+//                .frame(width: 18, height: 18)
+//                .padding(.all, 4)
+//                .background(Color.white, in: .circle)
+//            }
           }
           .foregroundStyle(.skinFirtsBlue)
 //          .padding(.trailing, -2)
@@ -73,5 +77,6 @@ struct DoctorWithAppointmentView: View {
 }
 
 #Preview {
-  DoctorWithAppointmentView(doctor: sampleDoctors.first!)
+  DoctorWithAppointmentView()
+//  DoctorWithAppointmentView(doctor: sampleDoctors.first!)
 }

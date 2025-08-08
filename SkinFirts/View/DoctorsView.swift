@@ -9,10 +9,13 @@ import SwiftUI
 //import SwiftData
 
 struct DoctorsView: View {
-  var modelDoctors = [Doctor]()
+//  var modelDoctors = [Doctor]()
+  var modelDoctors = [DoctorData]()
   @State private var currentSort: SortStatus  = .doctors
-  @State private var doctors: [Doctor] = [Doctor]()
-  @State private var doctor: Doctor = Doctor()
+//  @State private var doctors: [Doctor] = [Doctor]()
+//  @State private var doctor: Doctor = Doctor()
+  @State private var doctors = [DoctorData]()
+  @State private var doctor = DoctorData()
   @Environment(\.dismiss) var dismiss
   var body: some View {
     NavigationStack {
@@ -40,7 +43,7 @@ struct DoctorsView: View {
         .toolbarBackground(Color.white, for: .navigationBar)
         .onChange(of: currentSort) {
           if currentSort == .male || currentSort == .female {
-            doctors = modelDoctors.filter { $0.gender.rawValue == currentSort.rawValue.lowercased() }
+            doctors = modelDoctors.filter { $0.gender == currentSort.rawValue.lowercased() }
           } else if currentSort == .doctors {
             doctors = modelDoctors
           }
@@ -49,12 +52,15 @@ struct DoctorsView: View {
     }
   }
   
-  func DoctorView(doctor: Doctor) -> some View {
+  func DoctorView(doctor: DoctorData) -> some View {
     HStack(spacing: 10) {
-      Image(doctor.image)
-        .resizable()
+      RemoteImage(url: doctor.image)
         .aspectRatio(1, contentMode: .fill)
         .frame(width: 107, height: 107)
+//      Image(doctor.image)
+//        .resizable()
+//        .aspectRatio(1, contentMode: .fill)
+//        .frame(width: 107, height: 107)
       
       VStack(alignment: .leading, spacing: 25) {
         VStack(alignment: .leading, spacing: 10) {
@@ -68,7 +74,7 @@ struct DoctorsView: View {
             .fontweight(300)
             .foregroundStyle(.black)
         }
-        .padding(.top, 25)
+//        .padding(.top, 25)
         
         HStack {
           NavigationLink(destination: DoctorInfoView(doctor: doctor)) {
@@ -104,7 +110,8 @@ struct DoctorsView: View {
         }
       }
     }
-    .padding()
+    .padding(.horizontal)
+    .padding(.vertical, 8)
     .background(Color.skinFirtsGrayBlue, in: .rect(cornerRadius: 15))
   }
 }
@@ -119,5 +126,6 @@ enum SortStatus: String {
 }
 
 #Preview {
-    DoctorsView(modelDoctors: sampleDoctors)
+  DoctorsView()
+//    DoctorsView(modelDoctors: sampleDoctors)
 }

@@ -10,7 +10,8 @@ import SwiftUI
 struct DoctorsFavoriteView: View {
   @State private var status = "doctors"
   @State private var currentIndex = -1
-  var doctors = [Doctor]()
+  var doctors = [DoctorData]()
+//  var doctors = [Doctor]()
   var services = ["Dermato-Endocrinology", "Cosmetic Bioengineering", "Dermato-Genetics", "Solar Dermatology", "Dermato-Endocrinology"]
   var body: some View {
     VStack {
@@ -56,7 +57,7 @@ struct DoctorsFavoriteView: View {
     }
   }
   
-  func DoctorView(doctor: Doctor) -> some View {
+  func DoctorView(doctor: DoctorData) -> some View {
     HStack(spacing: 10) {
       Image(doctor.image)
         .resizable()
@@ -184,5 +185,6 @@ struct DoctorsFavoriteView: View {
 }
 
 #Preview {
-    DoctorsFavoriteView(doctors: sampleDoctors)
+  DoctorsFavoriteView()
+//    DoctorsFavoriteView(doctors: sampleDoctors)
 }
