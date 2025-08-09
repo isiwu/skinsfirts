@@ -74,6 +74,7 @@
 		14AADD8E2E102779004B516F /* AllAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD8D2E102779004B516F /* AllAppointmentView.swift */; };
 		14AADD902E1052BF004B516F /* AppointmentCancelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AADD8F2E1052BF004B516F /* AppointmentCancelView.swift */; };
 		14B6EA752E0191FB00804B9C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6EA742E0191FB00804B9C /* MessageView.swift */; };
+		14C735B92E47B84E0055837B /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C735B82E47B84E0055837B /* RestAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +147,7 @@
 		14AADD8D2E102779004B516F /* AllAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppointmentView.swift; sourceTree = "<group>"; };
 		14AADD8F2E1052BF004B516F /* AppointmentCancelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCancelView.swift; sourceTree = "<group>"; };
 		14B6EA742E0191FB00804B9C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		14C735B82E47B84E0055837B /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		146B48F32DE0E2250037167C /* SkinFirts */ = {
 			isa = PBXGroup;
 			children = (
+				14C735B72E47B7D30055837B /* RestAPI */,
 				1461CF7D2E44EDCE00F0001F /* Store */,
 				1471A2CD2DFC8F080086BBC3 /* ViewModel */,
 				149C36DC2DF5B2100098947C /* Extensions */,
@@ -314,6 +317,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		14C735B72E47B7D30055837B /* RestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				14C735B82E47B84E0055837B /* RestAPI.swift */,
+			);
+			path = RestAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,6 +443,7 @@
 				146B49122DE0F3BA0037167C /* GrayBlueButton.swift in Sources */,
 				149C36E02DF5B64F0098947C /* TextFieldView.swift in Sources */,
 				1466C09A2DF8749D00B10EC0 /* DoctorsFavoriteView.swift in Sources */,
+				14C735B92E47B84E0055837B /* RestAPI.swift in Sources */,
 				147273DE2E059DD400A9EC10 /* ScheduleView.swift in Sources */,
 				145B1DBE2E0B22F2003A7B2B /* PaymentMethodCardView.swift in Sources */,
 				147273DC2E055F7900A9EC10 /* ScheduleDoctorProfileView.swift in Sources */,
