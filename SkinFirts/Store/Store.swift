@@ -11,6 +11,7 @@ import Foundation
 class Store {
   static let data = Store()
   private var doctors = [DoctorData]()
+  private var doctorAvailabilities = [Availability]()
   private init() { }  // Prevent creating multiple instances
   
   func getDoctors() -> [DoctorData] {
@@ -19,10 +20,15 @@ class Store {
   func setDoctors(doctors: [DoctorData]) {
     self.doctors = doctors
   }
-  
+  func getDoctorAvailabilities() -> [Availability] {
+    self.doctorAvailabilities
+  }
+  func setDoctorAvailability(availabilities: [Availability]) {
+    self.doctorAvailabilities = availabilities
+  }
 }
 
-struct DoctorData: Codable, Hashable, Identifiable {
+struct DoctorData: Codable, Identifiable {
   let id: String
   let name: String
   let field: String
@@ -50,4 +56,19 @@ struct DoctorData: Codable, Hashable, Identifiable {
     self.stars = stars
     self.messages = messages
   }
+}
+
+struct Availability: Codable, Identifiable {
+  let id: String
+  let doctorId: String
+  let date: Date
+  var times: [TimeData]
+  let status: String
+}
+
+struct TimeData: Codable, Identifiable {
+  let id: String
+  let availableId: String
+  let startTime: String
+  let endTime: String
 }

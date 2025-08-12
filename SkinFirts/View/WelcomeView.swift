@@ -65,20 +65,7 @@ struct WelcomeView: View {
       }
     }
   }
-  
-//  func getDoctors() async throws {
-//    let url = URL(string: "http://localhost:3000/api/doctors")!
-//    let (data, _) = try await URLSession.shared.data(from: url)
-//    let wrapper = try JSONDecoder().decode(Wrapper.self, from: data)
-//    
-//    store.setDoctors(doctors: wrapper.data)
-//  }
 }
-
-//struct Wrapper: Codable {
-//  let status: Bool
-//  let data: [DoctorData]
-//}
 
 #Preview {
     WelcomeView()

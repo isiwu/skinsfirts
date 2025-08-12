@@ -111,6 +111,13 @@ struct ScheduleDoctorProfileView: View {
             getCalendar()
           })
         }
+        .task {
+          do {
+            try await RestAPI.request.getDoctorAvailabilities(doctorId: doctor.id)
+          } catch {
+            print("error => \(error)")
+          }
+        }
         .navigationBarBackButtonHidden(true)
         .toolbar(content: {
           ToolbarItem(placement: .topBarLeading) {
@@ -248,64 +255,6 @@ struct ScheduleDoctorProfileView: View {
       .padding(.vertical, 10)
       .frame(maxWidth: .infinity)
       .background(Color.white, in: .rect(cornerRadius: 15))
-      
-      VStack(alignment: .leading) {
-//        HStack(spacing: 6) {
-//          HStack(spacing: 1) {
-//            RatingBadgeView()
-//            
-//            MessagesBadgeView()
-//          }
-//          
-//          HStack(spacing: 2) {
-//            Image(systemName: "alarm")
-//            
-////            Text(doctor.availability)
-////              .font(.footnote)
-////              .fontweight(300)
-//          }
-//          .foregroundStyle(.skinFirtsBlue)
-//          .padding(.vertical, 2)
-//          .padding(.horizontal, 6)
-//          .background(Color.white, in: .rect(cornerRadius: 20))
-//        }
-        
-//        HStack {
-//          HStack {
-//            Image("calendar2")
-//              .resizable()
-//              .aspectRatio(contentMode: .fit)
-//              .frame(width: 15, height: 20)
-//            Text("Schedule")
-//              .font(.custom("LeagueSpartan", size: 16))
-//              .fontweight(300)
-//              .foregroundStyle(.white)
-//          }
-//          .padding(.vertical, 4)
-//          .padding(.horizontal, 6)
-//          .background(Color.skinFirtsBlue, in: .rect(cornerRadius: 20))
-//          
-//          Spacer()
-//          
-//          HStack(spacing: 3) {
-//            Image(systemName: "questionmark")
-//              .frame(width: 18, height: 18)
-//              .padding(.all, 4)
-//              .background(Color.white, in: .circle)
-//            
-//            Image(systemName: "star")
-//              .frame(width: 18, height: 18)
-//              .padding(.all, 4)
-//              .background(Color.white, in: .circle)
-//              
-//            Image(systemName: "heart")
-//              .frame(width: 18, height: 18)
-//              .padding(.all, 4)
-//              .background(Color.white, in: .circle)
-//          }
-//          .foregroundStyle(.skinFirtsBlue)
-//        }
-      }
     }
   }
   

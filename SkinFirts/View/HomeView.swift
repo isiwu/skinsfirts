@@ -11,7 +11,7 @@ import SwiftData
 struct HomeView: View {
   @State private var search = ""
   @State private var doctorsData = [DoctorData]()
-  @Query var doctors: [Doctor]
+//  @Query var doctors: [Doctor]
   var store = Store.data
   var body: some View {
     NavigationStack {
@@ -192,5 +192,5 @@ struct Line: Shape {
 
 #Preview {
     HomeView()
-    .modelContainer(previewContainer)
+//    .modelContainer(previewContainer)
 }

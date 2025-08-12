@@ -139,29 +139,9 @@ struct DoctorInfoView: View {
       .frame(maxWidth: .infinity)
       .background(Color.white, in: .rect(cornerRadius: 15))
       
-      VStack(alignment: .leading) {
-//        HStack(spacing: 6) {
-//          HStack(spacing: 1) {
-//            RatingBadgeView()
-//            
-//            MessagesBadgeView()
-//          }
-//          
-//          HStack(spacing: 2) {
-//            Image(systemName: "alarm")
-//            
-////            Text(doctor.availability)
-////              .font(.footnote)
-////              .fontweight(300)
-//          }
-//          .foregroundStyle(.skinFirtsBlue)
-//          .padding(.vertical, 2)
-//          .padding(.horizontal, 6)
-//          .background(Color.white, in: .rect(cornerRadius: 20))
-//        }
-        
+      VStack(alignment: .leading) {        
         HStack {
-          NavigationLink(destination: ScheduleView(doctor: doctor)) {
+          NavigationLink(destination: ScheduleDoctorProfileView(doctor: doctor)) {
             HStack {
               Image("calendar2")
                 .resizable()
